@@ -136,7 +136,7 @@ void CMainWnd::InitWindow()
 		m_pCreateLoginBtn->OnEvent			+= MakeDelegate(this,&CMainWnd::OnMsgBtnMouseLeave,UIEVENT_MOUSELEAVE);
 		m_pCreateLoginBtn->OnEvent			+= MakeDelegate(this,&CMainWnd::OnMsgBtnLButtonDown,UIEVENT_BUTTONDOWN);
 		m_pCreateLoginBtn->OnEvent			+= MakeDelegate(this,&CMainWnd::OnMsgBtnLButtonUp,UIEVENT_BUTTONUP);
-
+#if 0
 		CWebBrowserUI* pActiveXUI = static_cast<CWebBrowserUI*>(m_PaintManager.FindControl(_T("web_task_manager")));
 		if( pActiveXUI ) 
 		{
@@ -146,6 +146,22 @@ void CMainWnd::InitWindow()
 			pActiveXUI->Navigate2(L"about:blank");    //这行代码，如果注释掉，就不会去掉边框，IE有bug，第二次加载网页才会让事件处理器有效
 			pActiveXUI->Navigate2(L"http://www.baidu.com/");
 		}
+#else
+		CWkeWebkitUI	*m_pWke;
+		m_pWke = static_cast<CWkeWebkitUI*>(m_PaintManager.FindControl(_T("web_task_manager")));
+		if (m_pWke)
+		{
+			//jsBindFunction("msgBox", js_msgBox, 2);//这里绑定js函数，让js主动调用c++函数
+			static wkeClientHandler hander;        //网页标题改变和URL改变的回调
+			hander.onTitleChanged = NULL;
+			hander.onURLChanged = NULL;
+			m_pWke->SetClientHandler(&hander);
+			//m_pWke->SetFile(_T("Html/index.html")/*msg.pSender->GetText().GetData()*/);
+			m_pWke->SetURL(L"http://www.lufuli.net"); //一个漂亮的网站，大家可以自己试试
+
+		}
+#endif
+
 	}
 	catch (...)
 	{

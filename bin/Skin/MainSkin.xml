@@ -48,7 +48,9 @@
                     <HorizontalLayout height="5" /><!--middle split-->
 
                     <VerticalLayout bkcolor="#FFECEEFF"><!-- webkit -->
-                    	<WebBrowser  name="web_task_manager" clsid="{8856F961-340A-11D0-A96B-00C04FD705A2}" delaycreate="false" bkcolor="#FFFFFFFF"/>
+                    	<!--WkeWebkit  name="web_task_manager" clsid="{8856F961-340A-11D0-A96B-00C04FD705A2}" delaycreate="false" bkcolor="#FFFFFFFF"/-->
+
+                    	<WkeWebkit  name="web_task_manager" bkcolor="#FFFFFFFF"/>
                     </VerticalLayout>
 
                     <HorizontalLayout height="5" /><!--bottom split-->
