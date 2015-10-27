@@ -5,7 +5,7 @@
     <Font name="微软雅黑" size="16"  />
     <Font name="微软雅黑" size="18"  />
 
-	<VerticalLayout bkcolor="#CC2088FF">
+	<VerticalLayout bkcolor="#DD2088FF">
 
 		<HorizontalLayout height="29">
 			<Label text="    登录" align="" textcolor="#FFFFFFFF" />
