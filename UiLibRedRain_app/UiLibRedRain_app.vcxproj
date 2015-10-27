@@ -42,8 +42,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\WangDianNiu_DLL;thirdparty\UiLib;$(IncludePath)</IncludePath>
-    <LibraryPath>..\bin;thirdparty\UiLib\Lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\WangDianNiu_DLL;..\..\GuiLib-OwenYi\UiLib;$(IncludePath)</IncludePath>
+    <LibraryPath>..\bin;..\..\GuiLib-OwenYi\Lib;$(LibraryPath)</LibraryPath>
     <OutDir>..\bin</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -72,7 +72,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>wke.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

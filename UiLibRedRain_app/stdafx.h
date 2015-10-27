@@ -40,15 +40,15 @@ inline  void  EnableMemLeakCheck(int Breakpoint = 0){
 #if _MSC_VER == 1500
 #ifdef _DEBUG
 #ifndef Uilib_u_EXPORTS
-#pragma comment(lib, ".Uilib_ud.lib")
+#pragma comment(lib, ".UiLib.lib")
 #else
-#pragma comment(lib, "Uilib_ud.lib")
+#pragma comment(lib, "UiLib.lib")
 #endif
 #else
 #ifndef Uilib_u_EXPORTS
-#pragma comment(lib, "Uilib_u.lib")
+#pragma comment(lib, "UiLib.lib")
 #else
-#pragma comment(lib, "Uilib_u.lib")
+#pragma comment(lib, "UiLib.lib")
 #endif
 #endif
 #endif
@@ -56,15 +56,15 @@ inline  void  EnableMemLeakCheck(int Breakpoint = 0){
 #if _MSC_VER == 1600
 #ifdef _DEBUG
 #ifndef Uilib_u_EXPORTS
-#pragma comment(lib, "Uilib_ud.lib")
+#pragma comment(lib, "UiLib_u.lib")
 #else
-#pragma comment(lib, "Uilib_ud.lib")
+#pragma comment(lib, "UiLib_u.lib")
 #endif
 #else
 #ifndef Uilib_u_EXPORTS
-#pragma comment(lib, "Uilib_u.lib")
+#pragma comment(lib, "UiLib_u.lib")
 #else
-#pragma comment(lib, "Uilib_u.lib")
+#pragma comment(lib, "UiLib_u.lib")
 #endif
 #endif
 #endif
@@ -72,15 +72,15 @@ inline  void  EnableMemLeakCheck(int Breakpoint = 0){
 #if _MSC_VER == 1700
 #ifdef _DEBUG
 #ifndef Uilib_u_EXPORTS
-#pragma comment(lib, "Uilib_ud.lib")
+#pragma comment(lib, "UiLib_u.lib")
 #else
-#pragma comment(lib, "Uilib_ud.lib")
+#pragma comment(lib, "UiLib_u.lib")
 #endif
 #else
 #ifndef Uilib_u_EXPORTS
-#pragma comment(lib, "Uilib_u.lib")
+#pragma comment(lib, "UiLib_u.lib")
 #else
-#pragma comment(lib, "Uilib_u_u.lib")
+#pragma comment(lib, "UiLib_u.lib")
 #endif
 #endif
 #endif
