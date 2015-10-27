@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="1120,600" sizebox="1,1,1,1" caption="0,0,0,120" mininfo="1120,600"  bktrans="false" showshadow="true" shadowsize="6" shadowcolor="#FF000000" shadowsharpness="6" shadowdarkness="128" shadowposition="2,2">
+    <Font name="微软雅黑" size="13" default="true"/>
+    <Font name="微软雅黑" size="13" bold="true" />
+    <Font name="微软雅黑" size="15"  />
+
+    <VerticalLayout bkcolor="#FF2088FF"><!--  all back ground -->
+    	
+    	<HorizontalLayout height="60"><!-- caption -->
+            <HorizontalLayout height="29">
+                <Control />
+                <Button name="loginbtn" width="40" text="登录"  textcolor="#FFFFFFFF" />
+                <Button name="minbtn" width="31" height="29" normalimage="file='bitmap\BT_MIN.png' source='0,0,31,28' " hotimage="file='bitmap\BT_MIN.png' source='31,0,62,28' " pushedimage="file='bitmap\BT_MIN.png' source='62,0,93,28' " disabledimage="file='bitmap\BT_MIN.png' source='93,0,124,28' " tooltip="最小化程序"/>
+                <Button name="closebtn"  width="45" height="29" normalimage="file='bitmap\BT_CLOSE.png' source='0,0,45,28' " hotimage="file='bitmap\BT_CLOSE.png' source='45,0,90,28' " pushedimage="file='bitmap\BT_CLOSE.png' source='90,0,135,28' " disabledimage="file='bitmap\BT_CLOSE.png' source='135,0,180,28' " tooltip="退出程序"/>
+            </HorizontalLayout>
+    	</HorizontalLayout>
+
+    	<HorizontalLayout height="60"> <!-- tab button-->
+            <Option name="OptionUI_StartTask" width="80"  bkimage="file='bitmap\start_task.png' dest='16,7,64,55'" normalimage="" hotimage="file='bitmap\toolbar_hover.png' source='0,0,80,74'" pushedimage="" group="contenttab" selected="true" selectedimage="file='bitmap\toolbar_hover.png' source='80,0,160,74'" tooltip="执行任务页面"/>
+            <Option name="OptionUI_PublishTask" width="80" bkimage="file='bitmap\publish_task.png' dest='16,7,64,55'" normalimage="" hotimage="file='bitmap\toolbar_hover.png' source='0,0,80,74'" pushedimage="" group="contenttab" selectedimage="file='bitmap\toolbar_hover.png' source='80,0,160,74'" tooltip="发布任务页面"/>
+    	</HorizontalLayout>
+        <TabLayout>
+            <HorizontalLayout > <!-- do task page -->
+                <HorizontalLayout width="5" /><!--left border-->
+
+                <VerticalLayout >
+                    <VerticalLayout height="70" bkcolor="#FFECEEFF">
+                        <HorizontalLayout height="5"/>
+                        <HorizontalLayout height="26">
+                            <Control width="20"/>
+                            <Button name="ButtonUI_StartTask" width="70" text="开始任务" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file='bitmap\BT_DEFAULT.png' source='0,0,69,22' corner='8,8,8,8'  " hotimage="file='bitmap\BT_DEFAULT.png' source='69,0,138,22'  corner='8,8,8,8' " pushedimage="file='bitmap\BT_DEFAULT.png' source='138,0,207,22'  corner='8,8,8,8' " disabledimage="file='bitmap\BT_DEFAULT.png' source='207,0,276,22'  corner='8,8,8,8' " />
+                            <Control width="10"/>
+                            <Button name="ButtonUI_CheckDevice" width="70" text="检测设备" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file='bitmap\BT_DEFAULT.png' source='0,0,69,22'  corner='8,8,8,8' " hotimage="file='bitmap\BT_DEFAULT.png' source='69,0,138,22'  corner='8,8,8,8' " pushedimage="file='bitmap\BT_DEFAULT.png' source='138,0,207,22'  corner='8,8,8,8' " disabledimage="file='bitmap\BT_DEFAULT.png' source='207,0,276,22'   corner='8,8,8,8' " />
+                            <Control width="10"/>
+                            <Label name="LabelUI_DeviceStatus" text="请点击检测设备按钮检测手机设备" align="" textcolor="#FFFF0000" disabledtextcolor="#FFA7A6AA" />
+                            <Control width="20"/>
+                        </HorizontalLayout>
+
+                        <HorizontalLayout height="5"/>
+
+                        <HorizontalLayout height="26">
+                            <Control width="20"/>
+                            <Label name="LabelUI_TaskStatus" text="" align="" textcolor="#FFFF0000" disabledtextcolor="#FFA7A6AA" bkimage="file='bitmap\EDIT.png' source='30,0,60,26' corner='8,8,8,8' mask='#FFFFFF' "/>
+                            <Control width="20"/>
+                        </HorizontalLayout>
+                    </VerticalLayout>
+
+                    <HorizontalLayout height="5" /><!--middle split-->
+
+                    <VerticalLayout bkcolor="#FFECEEFF"><!-- webkit -->
+                    	<WebBrowser  name="web_task_manager" clsid="{8856F961-340A-11D0-A96B-00C04FD705A2}" delaycreate="false" bkcolor="#FFFFFFFF"/>
+                    </VerticalLayout>
+
+                    <HorizontalLayout height="5" /><!--bottom split-->
+                </VerticalLayout>
+
+                <HorizontalLayout width="5" /><!--right border-->
+            </HorizontalLayout>
+        </TabLayout>
+    </VerticalLayout>
+
+</Window>

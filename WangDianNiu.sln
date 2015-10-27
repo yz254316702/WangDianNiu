@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WangDianNiu_DLL", "WangDianNiu_DLL\WangDianNiu_DLL.vcxproj", "{140E761C-7109-47D0-8261-4F781690C8C2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UiLibRedRain_app", "UiLibRedRain_app\UiLibRedRain_app.vcxproj", "{5A0AC1B0-F0DA-4012-A3BC-658C340B3AC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{140E761C-7109-47D0-8261-4F781690C8C2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{140E761C-7109-47D0-8261-4F781690C8C2}.Debug|Win32.Build.0 = Debug|Win32
+		{140E761C-7109-47D0-8261-4F781690C8C2}.Release|Win32.ActiveCfg = Release|Win32
+		{140E761C-7109-47D0-8261-4F781690C8C2}.Release|Win32.Build.0 = Release|Win32
+		{5A0AC1B0-F0DA-4012-A3BC-658C340B3AC6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5A0AC1B0-F0DA-4012-A3BC-658C340B3AC6}.Debug|Win32.Build.0 = Debug|Win32
+		{5A0AC1B0-F0DA-4012-A3BC-658C340B3AC6}.Release|Win32.ActiveCfg = Release|Win32
+		{5A0AC1B0-F0DA-4012-A3BC-658C340B3AC6}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

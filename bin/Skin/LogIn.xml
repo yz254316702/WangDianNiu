@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window  size="380,220" sizebox="1,1,1,1" mininfo="380,220"  bktrans="true" showshadow="true" shadowsize="6" shadowcolor="#FF000000" shadowsharpness="6" shadowdarkness="128" shadowposition="2,2" caption="0,0,0,30" >
+    <Font name="微软雅黑" size="13" default="true"/>
+    <Font name="微软雅黑" size="15" />
+    <Font name="微软雅黑" size="16"  />
+    <Font name="微软雅黑" size="18"  />
+
+	<VerticalLayout bkcolor="#CC2088FF">
+
+		<HorizontalLayout height="29">
+			<Label text="    登录" align="" textcolor="#FFFFFFFF" />
+			<Button name="login_closebtn"  width="45" normalimage="file='bitmap\BT_CLOSE.png' source='0,0,45,28' " hotimage="file='bitmap\BT_CLOSE.png' source='45,0,90,28' " pushedimage="file='bitmap\BT_CLOSE.png' source='90,0,135,28' " disabledimage="file='bitmap\BT_CLOSE.png' source='135,0,180,28' " tooltip="退出登录"/>
+		</HorizontalLayout>
+
+		<VerticalLayout>
+			<HorizontalLayout height="30" />
+
+			<HorizontalLayout height="28">
+				<Control width="10" />
+				<Label text="帐号:" textcolor="#FFFFFFFF" width="80" align="center"/>
+				<Edit name="edit_user_name" align="center" bordersize="0" normalimage="file='bitmap\EDIT.png' source='30,0,60,26' corner='3,3,3,3' "/>
+				<Button name="btnZhuCeZhangHao" width="80" text="注册帐号" textcolor="#FF00FFFF" />
+				<Control width="10" />
+			</HorizontalLayout>
+
+			<HorizontalLayout height="15" />
+
+			<HorizontalLayout height="28">
+				<Control width="10" />
+				<Label text="密码:" textcolor="#FFFFFFFF" width="80" align="center"/>
+				<Edit name="edit_user_password" align="center" password="true" bordersize="0" normalimage="file='bitmap\EDIT.png' source='30,0,60,26' corner='3,3,3,3' " />
+				<Button name="btnWangJiMiMa" width="80" text="忘记密码" textcolor="#FF00FFFF" />
+				<Control width="10" />
+			</HorizontalLayout>
+
+			<HorizontalLayout>
+			</HorizontalLayout>
+
+			<HorizontalLayout height="32"><!--button login-->
+				<Control  />
+				<Button name="btnLogin" bordercolor="#FFFFFFFF" bordersize="1" width="120" text="登    录" textcolor="#FFFFFFFF" align="center" font="2" />
+				<Control  />
+			</HorizontalLayout>
+
+			<HorizontalLayout>
+			</HorizontalLayout>
+
+		</VerticalLayout>
+
+	</VerticalLayout>
+
+</Window>
