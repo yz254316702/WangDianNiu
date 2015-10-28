@@ -319,7 +319,8 @@ void CMainWnd::OnLoadFailed()
 void CMainWnd::OnLoadComplete()
 {
 	//hide scrollbar in webpage
-	m_pWke->RunJS(_T("document.body.style.overflow='hidden'"));
+	//abort at getmessage
+	//m_pWke->RunJS(_T("document.body.style.overflow='hidden'"));
 }
 
 void CMainWnd::OnDocumentReady()
