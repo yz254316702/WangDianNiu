@@ -147,7 +147,7 @@ void CMainWnd::InitWindow()
 			pActiveXUI->Navigate2(L"http://www.baidu.com/");
 		}
 #else
-		CWkeWebkitUI	*m_pWke;
+		
 		m_pWke = static_cast<CWkeWebkitUI*>(m_PaintManager.FindControl(_T("web_task_manager")));
 		if (m_pWke)
 		{
@@ -156,6 +156,7 @@ void CMainWnd::InitWindow()
 			hander.onTitleChanged = NULL;
 			hander.onURLChanged = NULL;
 			m_pWke->SetClientHandler(&hander);
+			m_pWke->SetLoadCallback(this);
 			//m_pWke->SetFile(_T("Html/index.html")/*msg.pSender->GetText().GetData()*/);
 			m_pWke->SetURL(L"http://www.baidu.com"); //一个漂亮的网站，大家可以自己试试
 
@@ -310,4 +311,18 @@ bool CMainWnd::OnMsgBtnLButtonDown( TEventUI* pTEventUI,LPARAM lParam,WPARAM wPa
 bool CMainWnd::OnMsgBtnLButtonUp( TEventUI* pTEventUI,LPARAM lParam,WPARAM wParam )
 {
 	return true;
+}
+
+void CMainWnd::OnLoadFailed()
+{
+}
+
+void CMainWnd::OnLoadComplete()
+{
+	//hide scrollbar in webpage
+	m_pWke->RunJS(_T("document.body.style.overflow='hidden'"));
+}
+
+void CMainWnd::OnDocumentReady()
+{
 }
