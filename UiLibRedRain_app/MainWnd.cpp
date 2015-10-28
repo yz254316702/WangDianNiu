@@ -147,7 +147,7 @@ void CMainWnd::InitWindow()
 			pActiveXUI->Navigate2(L"http://www.baidu.com/");
 		}
 #else
-		
+
 		m_pWke = static_cast<CWkeWebkitUI*>(m_PaintManager.FindControl(_T("web_task_manager")));
 		if (m_pWke)
 		{
@@ -159,7 +159,6 @@ void CMainWnd::InitWindow()
 			m_pWke->SetLoadCallback(this);
 			//m_pWke->SetFile(_T("Html/index.html")/*msg.pSender->GetText().GetData()*/);
 			m_pWke->SetURL(L"http://www.baidu.com"); //一个漂亮的网站，大家可以自己试试
-
 		}
 #endif
 
