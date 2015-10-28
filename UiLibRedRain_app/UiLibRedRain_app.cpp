@@ -14,7 +14,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
 	HRESULT Hr = ::CoInitialize(NULL);
 	if( FAILED(Hr) ) return 0;
-
+	CWkeWebkitUI::WkeWebkit_Init();
 	CPaintManagerUI::SetInstance(hInstance);
 	//DuiLib::CDuiString instancePath = CPaintManagerUI::GetInstancePath();
 	//instancePath += "Skin\\";
@@ -31,6 +31,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
 	CPaintManagerUI::MessageLoop();
 
+	CWkeWebkitUI::WkeWebkit_Shutdown();
 	::CoUninitialize();
 
 	_CrtDumpMemoryLeaks();
