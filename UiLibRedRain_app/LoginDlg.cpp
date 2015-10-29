@@ -165,11 +165,11 @@ bool CLoginDlg::OnMsgBtnMouseEnter( TEventUI* pTEventUI,LPARAM lParam,WPARAM wPa
 	}
 	else if (pTEventUI->pSender == m_pBtnZhuCeZhangHao)
 	{
-		((CButtonUI*)(pTEventUI->pSender))->SetFont(1);
+		((CButtonUI*)(pTEventUI->pSender))->SetFont(5);
 	}
 	else if (pTEventUI->pSender == m_pBtnWangJiMiMa)
 	{
-		((CButtonUI*)(pTEventUI->pSender))->SetFont(1);
+		((CButtonUI*)(pTEventUI->pSender))->SetFont(5);
 	}
 	return true;
 }
@@ -182,11 +182,11 @@ bool CLoginDlg::OnMsgBtnMouseLeave( TEventUI* pTEventUI,LPARAM lParam,WPARAM wPa
 	}
 	else if (pTEventUI->pSender == m_pBtnZhuCeZhangHao)
 	{
-		((CButtonUI*)(pTEventUI->pSender))->SetFont(0);
+		((CButtonUI*)(pTEventUI->pSender))->SetFont(4);
 	}
 	else if (pTEventUI->pSender == m_pBtnWangJiMiMa)
 	{
-		((CButtonUI*)(pTEventUI->pSender))->SetFont(0);
+		((CButtonUI*)(pTEventUI->pSender))->SetFont(4);
 	}
 	return true;
 }
@@ -199,11 +199,11 @@ bool CLoginDlg::OnMsgBtnLButtonDown( TEventUI* pTEventUI,LPARAM lParam,WPARAM wP
 	}
 	else if (pTEventUI->pSender == m_pBtnZhuCeZhangHao)
 	{
-		((CButtonUI*)(pTEventUI->pSender))->SetFont(0);
+		((CButtonUI*)(pTEventUI->pSender))->SetFont(4);
 	}
 	else if (pTEventUI->pSender == m_pBtnWangJiMiMa)
 	{
-		((CButtonUI*)(pTEventUI->pSender))->SetFont(0);
+		((CButtonUI*)(pTEventUI->pSender))->SetFont(4);
 	}
 	return true;
 }

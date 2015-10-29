@@ -4,6 +4,8 @@
     <Font name="微软雅黑" size="15" />
     <Font name="微软雅黑" size="16"  />
     <Font name="微软雅黑" size="18"  />
+    <Font name="微软雅黑" size="13" underline="true"/>
+    <Font name="微软雅黑" size="15" underline="true"/>
 
 	<VerticalLayout bkcolor="#DD2088FF">
 
@@ -19,7 +21,7 @@
 				<Control width="10" />
 				<Label text="帐号:" textcolor="#FFFFFFFF" width="80" align="center"/>
 				<Edit name="edit_user_name" align="center" bordersize="0" normalimage="file='bitmap\EDIT.png' source='30,0,60,26' corner='3,3,3,3' "/>
-				<Button name="btnZhuCeZhangHao" width="80" text="注册帐号" textcolor="#FF00FFFF" />
+				<Button name="btnZhuCeZhangHao" width="80" text="注册帐号" textcolor="#FF00FFFF"  font="4"/>
 				<Control width="10" />
 			</HorizontalLayout>
 
@@ -29,7 +31,7 @@
 				<Control width="10" />
 				<Label text="密码:" textcolor="#FFFFFFFF" width="80" align="center"/>
 				<Edit name="edit_user_password" align="center" password="true" bordersize="0" normalimage="file='bitmap\EDIT.png' source='30,0,60,26' corner='3,3,3,3' " />
-				<Button name="btnWangJiMiMa" width="80" text="忘记密码" textcolor="#FF00FFFF" />
+				<Button name="btnWangJiMiMa" width="80" text="忘记密码" textcolor="#FF00FFFF" font="4"/>
 				<Control width="10" />
 			</HorizontalLayout>
 
