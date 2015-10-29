@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CWebEventHandler.h" />
+    <ClInclude Include="DoTaskPageUI.h" />
     <ClInclude Include="LoginDlg.h" />
     <ClInclude Include="MainWnd.h" />
     <ClInclude Include="Resource.h" />
@@ -90,6 +91,7 @@
     <ClInclude Include="UiLibRedRain_app.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DoTaskPageUI.cpp" />
     <ClCompile Include="LoginDlg.cpp" />
     <ClCompile Include="MainWnd.cpp" />
     <ClCompile Include="stdafx.cpp">

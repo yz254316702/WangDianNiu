@@ -130,7 +130,7 @@ void CMainWnd::InitWindow()
 		m_pLabelDeviceStatus = static_cast<CTextUI*>(m_PaintManager.FindControl(_T("LabelUI_DeviceStatus")));
 		m_pLabelTaskStatus = static_cast<CTextUI*>(m_PaintManager.FindControl(_T("LabelUI_TaskStatus")));
 		m_pCreateLoginBtn = static_cast<CButtonUI*>(m_PaintManager.FindControl(_T("loginbtn")));
-
+		m_pTabCtrl = static_cast<CTabLayoutUI*>(m_PaintManager.FindControl(_T("main_frame_tabCtrl")));
 
 		m_pCreateLoginBtn->OnEvent			+= MakeDelegate(this,&CMainWnd::OnMsgBtnMouseEnter,UIEVENT_MOUSEENTER);
 		m_pCreateLoginBtn->OnEvent			+= MakeDelegate(this,&CMainWnd::OnMsgBtnMouseLeave,UIEVENT_MOUSELEAVE);
@@ -192,6 +192,17 @@ void CMainWnd::Notify( TNotifyUI& msg )
 		{
 			OnBnClickedButtonLogin();
 			return;
+		}
+	}
+	else if ( msg.sType == _T("selectchanged") )
+	{	
+		if (msg.pSender->GetName() == _T("OptionUI_StartTask"))
+		{
+			m_pTabCtrl->SelectItem(0);
+		}
+		else if( msg.pSender->GetName() == _T("OptionUI_PublishTask"))
+		{
+			m_pTabCtrl->SelectItem(1);
 		}
 	}
 	WindowImplBase::Notify(msg);

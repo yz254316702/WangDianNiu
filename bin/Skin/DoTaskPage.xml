@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window>
+            <HorizontalLayout > <!-- do task page -->
+                <HorizontalLayout width="5" /><!--left border-->
+
+                <VerticalLayout >
+                    <VerticalLayout height="70" bkcolor="#FFECEEFF">
+                        <HorizontalLayout height="5"/>
+                        <HorizontalLayout height="26">
+                            <Control width="20"/>
+                            <Button name="ButtonUI_StartTask" width="70" text="开始任务" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file='bitmap\BT_DEFAULT.png' source='0,0,69,22' corner='8,8,8,8'  " hotimage="file='bitmap\BT_DEFAULT.png' source='69,0,138,22'  corner='8,8,8,8' " pushedimage="file='bitmap\BT_DEFAULT.png' source='138,0,207,22'  corner='8,8,8,8' " disabledimage="file='bitmap\BT_DEFAULT.png' source='207,0,276,22'  corner='8,8,8,8' " />
+                            <Control width="10"/>
+                            <Button name="ButtonUI_CheckDevice" width="70" text="检测设备" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file='bitmap\BT_DEFAULT.png' source='0,0,69,22'  corner='8,8,8,8' " hotimage="file='bitmap\BT_DEFAULT.png' source='69,0,138,22'  corner='8,8,8,8' " pushedimage="file='bitmap\BT_DEFAULT.png' source='138,0,207,22'  corner='8,8,8,8' " disabledimage="file='bitmap\BT_DEFAULT.png' source='207,0,276,22'   corner='8,8,8,8' " />
+                            <Control width="10"/>
+                            <Label name="LabelUI_DeviceStatus" text="请点击检测设备按钮检测手机设备" align="" textcolor="#FFFF0000" disabledtextcolor="#FFA7A6AA" />
+                            <Control width="20"/>
+                        </HorizontalLayout>
+
+                        <HorizontalLayout height="5"/>
+
+                        <HorizontalLayout height="26">
+                            <Control width="20"/>
+                            <Label name="LabelUI_TaskStatus" text="" align="" textcolor="#FFFF0000" disabledtextcolor="#FFA7A6AA" bkimage="file='bitmap\EDIT.png' source='30,0,60,26' corner='8,8,8,8' mask='#FFFFFF' "/>
+                            <Control width="20"/>
+                        </HorizontalLayout>
+                    </VerticalLayout>
+
+                    <HorizontalLayout height="5" /><!--middle split-->
+
+                    <VerticalLayout bkcolor="#FFECEEFF"><!-- webkit -->
+                    	<!--WkeWebkit  name="web_task_manager" clsid="{8856F961-340A-11D0-A96B-00C04FD705A2}" delaycreate="false" bkcolor="#FFFFFFFF"/-->
+
+                    	<WkeWebkit  name="web_task_manager" bkcolor="#FFFFFFFF"/>
+                    </VerticalLayout>
+
+                    <HorizontalLayout height="5" /><!--bottom split-->
+                </VerticalLayout>
+
+                <HorizontalLayout width="5" /><!--right border-->
+            </HorizontalLayout>
+</Window>

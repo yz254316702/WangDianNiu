@@ -1,6 +1,7 @@
 #pragma once
 #include "core/IEventCallBack.h"
 #include"WangDianNiu_DLL.h"
+#include "DoTaskPageUI.h"
 
 class CMainWnd:public WindowImplBase, public IEventCallBack,  public CWkeWebkitLoadCallback  
 {
@@ -32,6 +33,12 @@ public:
 	void OnBnClickedButtonStarttask();
 	void OnBnClickedButtonDevicecheck();
 	void OnBnClickedButtonLogin();
+
+	CControlUI* CreateControl(LPCTSTR pstrClass) 
+	{
+		if( _tcscmp(pstrClass, _T(DO_TASK_PAGE)) == 0 ) return new CDoTaskPageUI(&m_PaintManager);
+		return NULL;
+	}
 private:
 	CWangDianNiu_DLL *m_WndObj;
 	CWkeWebkitUI	*m_pWke;
@@ -40,5 +47,6 @@ private:
 	CLabelUI*  m_pLabelDeviceStatus;
 	CLabelUI*  m_pLabelTaskStatus;
 	CButtonUI* m_pCreateLoginBtn;
+	UiLib::CTabLayoutUI* m_pTabCtrl;
 };
 
