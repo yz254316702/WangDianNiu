@@ -28,6 +28,8 @@ public:
 	int chechDevice();
 	bool isInitOK();
 	bool isTaskStarted();
+	static void InitConsoleWindow();
+	static void FreeConsoleWindow();
 private:
 	CWangDianNiu_DLL(void);
 private:

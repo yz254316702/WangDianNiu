@@ -11,7 +11,7 @@
 // Windows Header Files:
 #include <windows.h>
 
-#define  DEBUG_MSG 0
+#define  DEBUG_MSG 1
 #if DEBUG_MSG
 #define printLog(format, ...) fprintf(stdout, format, __VA_ARGS__);fprintf(stderr, format, __VA_ARGS__)
 #else

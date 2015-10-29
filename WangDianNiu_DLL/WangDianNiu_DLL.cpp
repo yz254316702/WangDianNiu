@@ -7,11 +7,17 @@
 #include "WangDianNiu_DLL.h"
 
 
-int nCrt = 0;
-FILE* fp_err;
-FILE* fp_out;
-void InitConsoleWindow()
+static int nCrt = 0;
+static FILE* fp_err;
+static FILE* fp_out;
+static bool is_inited = false;
+void CWangDianNiu_DLL::InitConsoleWindow()
 {
+	if (is_inited)
+	{
+		return;
+	}
+	is_inited = true;
 #if DEBUG_MSG
 	AllocConsole();
 	fp_out = freopen("CONOUT$", "w", stdout);
@@ -19,8 +25,13 @@ void InitConsoleWindow()
 	fp_err = freopen("wnd.log","w",stderr);
 	setlocale(LC_ALL,"chs");
 }
-void FreeConsoleWindow()
+void CWangDianNiu_DLL::FreeConsoleWindow()
 {
+	if (!is_inited)
+	{
+		return;
+	}
+	is_inited = false;
 	fclose( fp_err );
 #if DEBUG_MSG
 	fclose( fp_out );

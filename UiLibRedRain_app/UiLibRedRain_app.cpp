@@ -11,6 +11,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
                      int       nCmdShow)
 {
 	EnableMemLeakCheck();
+	CWangDianNiu_DLL::InitConsoleWindow();
 
 	HRESULT Hr = ::CoInitialize(NULL);
 	if( FAILED(Hr) ) return 0;
@@ -33,7 +34,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
 	CWkeWebkitUI::WkeWebkit_Shutdown();
 	::CoUninitialize();
-
+	CWangDianNiu_DLL::FreeConsoleWindow();
 	_CrtDumpMemoryLeaks();
 	return 0;
 }

@@ -90,6 +90,7 @@ LRESULT CMainWnd::HandleMessage( UINT uMsg, WPARAM wParam, LPARAM lParam )
 {
 	try
 	{
+		//wprintf(_T("HandleMessage --- msg = %d   : %d   %d\n"),uMsg,wParam,lParam);
 		//TODO
 		if (uMsg == USER_MSG_DEVICE_STATUS)
 		{
@@ -176,7 +177,8 @@ void CMainWnd::InitWindow()
 //************************************
 void CMainWnd::Notify( TNotifyUI& msg )
 {
-	if( msg.sType == _T("click") )
+	//wprintf(_T("Notify --- msg type = %s  :  %s\n"),msg.sType,msg.pSender->GetName());
+	if( msg.sType == DUI_MSGTYPE_CLICK )
 	{
 		if( msg.pSender == m_pStartTaskBtn )
 		{
@@ -194,7 +196,7 @@ void CMainWnd::Notify( TNotifyUI& msg )
 			return;
 		}
 	}
-	else if ( msg.sType == _T("selectchanged") )
+	else if ( msg.sType == DUI_MSGTYPE_SELECTCHANGED )
 	{	
 		if (msg.pSender->GetName() == _T("OptionUI_StartTask"))
 		{
