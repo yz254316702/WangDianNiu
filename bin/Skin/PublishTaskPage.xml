@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window>
+	<HorizontalLayout >
+        <HorizontalLayout width="5" /><!--left border-->
+
+        	<VerticalLayout>
+
+        		<VerticalLayout height="180">
+        			<WkeWebkit  name="web_in_publish_page" bkcolor="#FFFFFFFF"/>
+        		</VerticalLayout>
+
+        		<VerticalLayout height="5" /><!--middle split-->
+
+        		<VerticalLayout bkcolor="#FFECEEFF">
+                    <HorizontalLayout height="5"/>
+        			<HorizontalLayout height="26">
+        				<Control width="20"/>
+        				<Label text="手机搜索列表中完整的宝贝标题：" align="" autocalcwidth="true"/>
+        				<Control width="10"/>
+        				<Edit name="edit_total_title" bordersize="0" normalimage="file='bitmap\EDIT.png' source='30,0,60,26' corner='3,3,3,3' " />
+        				<Control width="10"/>
+        				<Label text="副标题：" align="" autocalcwidth="true"/>
+        				<Control width="10"/>
+        				<Edit name="edit_fu_biao_ti" bordersize="0" normalimage="file='bitmap\EDIT.png' source='30,0,60,26' corner='3,3,3,3' " width="250"/>
+        				<Control width="20"/>
+        			</HorizontalLayout>
+
+                    <HorizontalLayout height="5"/>
+
+        			<HorizontalLayout height="26">
+        				<Control width="20"/>
+        				<Label text="搜索关键字：" align="" autocalcwidth="true"/>
+        				<Control width="10"/>
+        				<Edit name="edit_search_key" bordersize="0" normalimage="file='bitmap\EDIT.png' source='30,0,60,26' corner='3,3,3,3' " />
+        				<Control width="10"/>
+        				<Label text="商品价格(元)：" align="" autocalcwidth="true"/>
+        				<Control width="10"/>
+        				<Edit name="edit_target_price" bordersize="0" normalimage="file='bitmap\EDIT.png' source='30,0,60,26' corner='3,3,3,3' " width="100"/>
+        				<Control width="10"/>
+        				<Label text="排序类型：" align="" autocalcwidth="true"/>
+        				<Control width="10"/>
+        				<Combo name="combo_search_sort" bordersize="0" width="120" bkimage="file='bitmap\EDIT.png' source='30,0,60,26' corner='3,3,3,3'" textpadding="2,2,2,2" normalimage="file='bitmap\BT_DROP_DOWN.png' source='0,0,23,24' dest='97,2,118,24' " hotimage="file='bitmap\BT_DROP_DOWN.png' source='23,0,46,24' dest='97,2,118,24' " pushedimage="file='bitmap\BT_DROP_DOWN.png' source='46,0,69,24' dest='97,2,118,24' " disabledimage="file='bitmap\BT_DROP_DOWN.png' source='69,0,92,24' dest='97,2,118,24' " >
+        					<ListLabelElement text="综合排序" selected="true" padding="1,1,1,1" />
+        					<ListLabelElement text="价格从低到高"  padding="1,1,1,1" />
+        					<ListLabelElement text="价格从高到低"  padding="1,1,1,1"  />
+        					<ListLabelElement text="信用排序"  padding="1,1,1,1"  />
+        					<ListLabelElement text="销量优先"  padding="1,1,1,1"  />
+        				</Combo>
+        				<Control width="10"/>
+        				<CheckBox name="checkbox_price_min_max" width="26" normalimage="file='bitmap\CHECK_BOX.png' source='0,0,17,17' dest='4,4,21,21' " hotimage="file='bitmap\CHECK_BOX.png' source='17,0,34,17' dest='4,4,21,21'" pushedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedhotimage="file='bitmap\CHECK_BOX.png' source='68,0,85,17' dest='4,4,21,21'" selectedpushedimage="file='bitmap\CHECK_BOX.png' source='85,0,102,17' dest='4,4,21,21'" />
+        				<Label text="限价区间(元)：" autocalcwidth="true"/>
+        				<Control width="10"/>
+        				<Edit name="edit_target_price_min" bordersize="0" normalimage="file='bitmap\EDIT.png' source='30,0,60,26' corner='3,3,3,3' " width="100"/>
+        				<Label text=" - " autocalcwidth="true"/>
+        				<Edit name="edit_target_price_max" bordersize="0" normalimage="file='bitmap\EDIT.png' source='30,0,60,26' corner='3,3,3,3' " width="100"/>
+
+        				<Control width="20"/>
+        			</HorizontalLayout>
+                    <HorizontalLayout height="5"/>
+                    <HorizontalLayout height="26" >
+        				<Control width="20"/>
+        				<Label text="折扣和服务：" autocalcwidth="true"/>
+        				<Control width="10"/>
+        				<CheckBox name="checkbox_mian_yun_fei" width="26" normalimage="file='bitmap\CHECK_BOX.png' source='0,0,17,17' dest='4,4,21,21' " hotimage="file='bitmap\CHECK_BOX.png' source='17,0,34,17' dest='4,4,21,21'" pushedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedhotimage="file='bitmap\CHECK_BOX.png' source='68,0,85,17' dest='4,4,21,21'" selectedpushedimage="file='bitmap\CHECK_BOX.png' source='85,0,102,17' dest='4,4,21,21'" />
+        				<Label text="免运费" autocalcwidth="true"/>
+        				<Control width="10"/>
+        				<CheckBox name="checkbox_tian_mao" width="26" normalimage="file='bitmap\CHECK_BOX.png' source='0,0,17,17' dest='4,4,21,21' " hotimage="file='bitmap\CHECK_BOX.png' source='17,0,34,17' dest='4,4,21,21'" pushedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedhotimage="file='bitmap\CHECK_BOX.png' source='68,0,85,17' dest='4,4,21,21'" selectedpushedimage="file='bitmap\CHECK_BOX.png' source='85,0,102,17' dest='4,4,21,21'" />
+        				<Label text="天猫" autocalcwidth="true"/>
+        				<Control width="10"/>
+        				<CheckBox name="checkbox_shouji_zhuanxiang" width="26" normalimage="file='bitmap\CHECK_BOX.png' source='0,0,17,17' dest='4,4,21,21' " hotimage="file='bitmap\CHECK_BOX.png' source='17,0,34,17' dest='4,4,21,21'" pushedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedhotimage="file='bitmap\CHECK_BOX.png' source='68,0,85,17' dest='4,4,21,21'" selectedpushedimage="file='bitmap\CHECK_BOX.png' source='85,0,102,17' dest='4,4,21,21'" />
+        				<Label text="手机专享" autocalcwidth="true"/>
+        				<Control width="10"/>
+        				<CheckBox name="checkbox_jinbi_money" width="26" normalimage="file='bitmap\CHECK_BOX.png' source='0,0,17,17' dest='4,4,21,21' " hotimage="file='bitmap\CHECK_BOX.png' source='17,0,34,17' dest='4,4,21,21'" pushedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedhotimage="file='bitmap\CHECK_BOX.png' source='68,0,85,17' dest='4,4,21,21'" selectedpushedimage="file='bitmap\CHECK_BOX.png' source='85,0,102,17' dest='4,4,21,21'" />
+        				<Label text="淘金币抵钱" autocalcwidth="true"/>
+        				<Control width="10"/>
+        				<CheckBox name="checkbox_huo_dao_fu_kuan" width="26" normalimage="file='bitmap\CHECK_BOX.png' source='0,0,17,17' dest='4,4,21,21' " hotimage="file='bitmap\CHECK_BOX.png' source='17,0,34,17' dest='4,4,21,21'" pushedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedhotimage="file='bitmap\CHECK_BOX.png' source='68,0,85,17' dest='4,4,21,21'" selectedpushedimage="file='bitmap\CHECK_BOX.png' source='85,0,102,17' dest='4,4,21,21'" />
+        				<Label text="货到付款" autocalcwidth="true"/>
+        				<Control width="10"/>
+        				<CheckBox name="checkbox_qitian_tui_huo" width="26" normalimage="file='bitmap\CHECK_BOX.png' source='0,0,17,17' dest='4,4,21,21' " hotimage="file='bitmap\CHECK_BOX.png' source='17,0,34,17' dest='4,4,21,21'" pushedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedhotimage="file='bitmap\CHECK_BOX.png' source='68,0,85,17' dest='4,4,21,21'" selectedpushedimage="file='bitmap\CHECK_BOX.png' source='85,0,102,17' dest='4,4,21,21'" />
+        				<Label text="7+天退换货" autocalcwidth="true"/>
+        				<Control width="10"/>
+        				<CheckBox name="checkbox_cu_xiao" width="26" normalimage="file='bitmap\CHECK_BOX.png' source='0,0,17,17' dest='4,4,21,21' " hotimage="file='bitmap\CHECK_BOX.png' source='17,0,34,17' dest='4,4,21,21'" pushedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedhotimage="file='bitmap\CHECK_BOX.png' source='68,0,85,17' dest='4,4,21,21'" selectedpushedimage="file='bitmap\CHECK_BOX.png' source='85,0,102,17' dest='4,4,21,21'" />
+        				<Label text="促销" autocalcwidth="true"/>
+        				<Control width="10"/>
+        				<Label text="发货地：" autocalcwidth="true"/>
+        				<Combo name="combo_send_place" bordersize="0" width="120" bkimage="file='bitmap\EDIT.png' source='30,0,60,26' corner='3,3,3,3'" textpadding="2,2,2,2" normalimage="file='bitmap\BT_DROP_DOWN.png' source='0,0,23,24' dest='97,2,118,24' " hotimage="file='bitmap\BT_DROP_DOWN.png' source='23,0,46,24' dest='97,2,118,24' " pushedimage="file='bitmap\BT_DROP_DOWN.png' source='46,0,69,24' dest='97,2,118,24' " disabledimage="file='bitmap\BT_DROP_DOWN.png' source='69,0,92,24' dest='97,2,118,24' " >
+        					<ListLabelElement text="所有地区" selected="true" padding="1,1,1,1" />
+        					<ListLabelElement text="江浙沪"  padding="1,1,1,1" />
+        					<ListLabelElement text="珠三角"  padding="1,1,1,1"  />
+        					<ListLabelElement text="港澳台"  padding="1,1,1,1"  />
+        					<ListLabelElement text="海外"  padding="1,1,1,1"  />
+        					<ListLabelElement text="安徽"  padding="1,1,1,1"  />
+        					<ListLabelElement text="福建"  padding="1,1,1,1"  />
+        					<ListLabelElement text="甘肃"  padding="1,1,1,1"  />
+        					<ListLabelElement text="广东"  padding="1,1,1,1"  />
+        					<ListLabelElement text="广西"  padding="1,1,1,1"  />
+        					<ListLabelElement text="贵州"  padding="1,1,1,1"  />
+        					<ListLabelElement text="海南"  padding="1,1,1,1"  />
+        					<ListLabelElement text="河北"  padding="1,1,1,1"  />
+        					<ListLabelElement text="湖南"  padding="1,1,1,1"  />
+        					<ListLabelElement text="江苏"  padding="1,1,1,1"  />
+        					<ListLabelElement text="黑龙江"  padding="1,1,1,1"  />
+        					<ListLabelElement text="江西"  padding="1,1,1,1"  />
+        					<ListLabelElement text="吉林"  padding="1,1,1,1"  />
+        					<ListLabelElement text="辽宁"  padding="1,1,1,1"  />
+        					<ListLabelElement text="内蒙古"  padding="1,1,1,1"  />
+        					<ListLabelElement text="宁夏"  padding="1,1,1,1"  />
+        					<ListLabelElement text="青海"  padding="1,1,1,1"  />
+        					<ListLabelElement text="山东"  padding="1,1,1,1"  />
+        					<ListLabelElement text="山西"  padding="1,1,1,1"  />
+        					<ListLabelElement text="陕西"  padding="1,1,1,1"  />
+        					<ListLabelElement text="四川"  padding="1,1,1,1"  />
+        					<ListLabelElement text="西藏"  padding="1,1,1,1"  />
+        					<ListLabelElement text="新疆"  padding="1,1,1,1"  />
+        					<ListLabelElement text="云南"  padding="1,1,1,1"  />
+        					<ListLabelElement text="浙江"  padding="1,1,1,1"  />
+        					<ListLabelElement text="香港"  padding="1,1,1,1"  />
+        					<ListLabelElement text="澳门"  padding="1,1,1,1"  />
+        					<ListLabelElement text="台湾"  padding="1,1,1,1"  />
+        					<ListLabelElement text="北京"  padding="1,1,1,1"  />
+        					<ListLabelElement text="上海"  padding="1,1,1,1"  />
+        					<ListLabelElement text="广州"  padding="1,1,1,1"  />
+        					<ListLabelElement text="深圳"  padding="1,1,1,1"  />
+        					<ListLabelElement text="杭州"  padding="1,1,1,1"  />
+        					<ListLabelElement text="温州"  padding="1,1,1,1"  />
+        					<ListLabelElement text="宁波"  padding="1,1,1,1"  />
+        					<ListLabelElement text="南京"  padding="1,1,1,1"  />
+        					<ListLabelElement text="苏州"  padding="1,1,1,1"  />
+        					<ListLabelElement text="济南"  padding="1,1,1,1"  />
+        					<ListLabelElement text="青岛"  padding="1,1,1,1"  />
+        					<ListLabelElement text="大连"  padding="1,1,1,1"  />
+        					<ListLabelElement text="无锡"  padding="1,1,1,1"  />
+        					<ListLabelElement text="合肥"  padding="1,1,1,1"  />
+        					<ListLabelElement text="天津"  padding="1,1,1,1"  />
+        					<ListLabelElement text="长沙"  padding="1,1,1,1"  />
+        					<ListLabelElement text="武汉"  padding="1,1,1,1"  />
+        					<ListLabelElement text="郑州"  padding="1,1,1,1"  />
+        					<ListLabelElement text="石家庄"  padding="1,1,1,1"  />
+        					<ListLabelElement text="成都"  padding="1,1,1,1"  />
+        					<ListLabelElement text="重庆"  padding="1,1,1,1"  />
+        					<ListLabelElement text="西安"  padding="1,1,1,1"  />
+        					<ListLabelElement text="昆明"  padding="1,1,1,1"  />
+        					<ListLabelElement text="南宁"  padding="1,1,1,1"  />
+        					<ListLabelElement text="福州"  padding="1,1,1,1"  />
+        					<ListLabelElement text="厦门"  padding="1,1,1,1"  />
+        					<ListLabelElement text="南昌"  padding="1,1,1,1"  />
+        					<ListLabelElement text="东莞"  padding="1,1,1,1"  />
+        					<ListLabelElement text="沈阳"  padding="1,1,1,1"  />
+        					<ListLabelElement text="长春"  padding="1,1,1,1"  />
+        					<ListLabelElement text="哈尔滨"  padding="1,1,1,1"  />
+        				</Combo>
+        				<Control width="10"/>
+        				<Label text="搜索宝贝最大时间(秒):" autocalcwidth="true"/>
+        				<Edit name="edit_max_search_time" bordersize="0" normalimage="file='bitmap\EDIT.png' source='30,0,60,26' corner='3,3,3,3' " width=""/>
+        				<Control width="20"/>
+                    </HorizontalLayout>
+
+        		</VerticalLayout>
+
+				<HorizontalLayout height="5" /><!--bottom split-->
+        	</VerticalLayout>
+
+		<HorizontalLayout width="5" /><!--right border-->
+	</HorizontalLayout>
+</Window>

@@ -2,6 +2,7 @@
 #include "core/IEventCallBack.h"
 #include"WangDianNiu_DLL.h"
 #include "DoTaskPageUI.h"
+#include "PublishTaskPageUI.h"
 
 class CMainWnd:public WindowImplBase, public IEventCallBack,  public CWkeWebkitLoadCallback  
 {
@@ -37,6 +38,7 @@ public:
 	CControlUI* CreateControl(LPCTSTR pstrClass) 
 	{
 		if( _tcscmp(pstrClass, _T(DO_TASK_PAGE)) == 0 ) return new CDoTaskPageUI(&m_PaintManager);
+		else if ( _tcscmp(pstrClass, _T(PUBLISH_TASK_PAGE)) == 0 ) return new CPublishTaskPageUI(&m_PaintManager);
 		return NULL;
 	}
 private:

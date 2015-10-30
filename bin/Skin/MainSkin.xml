@@ -25,6 +25,7 @@
           </HorizontalLayout>
           
           <HorizontalLayout>
+            <PublishTaskPage />
           </HorizontalLayout>
 
         </TabLayout>
