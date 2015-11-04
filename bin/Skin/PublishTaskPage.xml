@@ -15,11 +15,11 @@
                     <HorizontalLayout height="5"/>
         			<HorizontalLayout height="26">
         				<Control width="20"/>
-        				<Label text="手机搜索列表中完整的宝贝标题：" align="" autocalcwidth="true"/>
+        				<Label text="手机搜索列表中完整的宝贝标题:" textcolor="#FF666666" align="" autocalcwidth="true"/>
         				<Control width="10"/>
         				<Edit name="edit_total_title" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " />
         				<Control width="10"/>
-        				<Label text="副标题：" align="" autocalcwidth="true"/>
+        				<Label text="副标题:" textcolor="#FF666666" align="" autocalcwidth="true"/>
         				<Control width="10"/>
         				<Edit name="edit_fu_biao_ti" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="250"/>
         				<Control width="20"/>
@@ -29,15 +29,15 @@
 
         			<HorizontalLayout height="26">
         				<Control width="20"/>
-        				<Label text="搜索关键字：" align="" autocalcwidth="true"/>
+        				<Label text="搜索关键字:" textcolor="#FF666666" align="" autocalcwidth="true"/>
         				<Control width="10"/>
         				<Edit name="edit_search_key" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " />
         				<Control width="10"/>
-        				<Label text="商品价格(元)：" align="" autocalcwidth="true"/>
+        				<Label text="商品价格(元):" textcolor="#FF666666" align="" autocalcwidth="true"/>
         				<Control width="10"/>
         				<Edit name="edit_target_price" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="100"/>
         				<Control width="10"/>
-        				<Label text="排序类型：" align="" autocalcwidth="true"/>
+        				<Label text="排序类型:" textcolor="#FF666666" align="" autocalcwidth="true"/>
         				<Control width="10"/>
         				<Combo name="combo_search_sort" bordersize="0" width="120" bkimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3'" textpadding="2,2,2,2" normalimage="file='bitmap\BT_DROP_DOWN.png' source='0,0,23,24' dest='97,2,118,24' " hotimage="file='bitmap\BT_DROP_DOWN.png' source='23,0,46,24' dest='97,2,118,24' " pushedimage="file='bitmap\BT_DROP_DOWN.png' source='46,0,69,24' dest='97,2,118,24' " disabledimage="file='bitmap\BT_DROP_DOWN.png' source='69,0,92,24' dest='97,2,118,24' " >
         					<ListLabelElement text="综合排序" selected="true" padding="1,1,1,1" />
@@ -48,7 +48,7 @@
         				</Combo>
         				<Control width="10"/>
         				<CheckBox name="checkbox_price_min_max" width="26" normalimage="file='bitmap\CHECK_BOX.png' source='0,0,17,17' dest='4,4,21,21' " hotimage="file='bitmap\CHECK_BOX.png' source='17,0,34,17' dest='4,4,21,21'" pushedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedhotimage="file='bitmap\CHECK_BOX.png' source='68,0,85,17' dest='4,4,21,21'" selectedpushedimage="file='bitmap\CHECK_BOX.png' source='85,0,102,17' dest='4,4,21,21'" />
-        				<Label text="限价区间(元)：" autocalcwidth="true"/>
+        				<Label text="限价区间(元):" textcolor="#FF666666" autocalcwidth="true"/>
         				<Control width="10"/>
         				<Edit name="edit_target_price_min" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="100"/>
         				<Label text=" - " autocalcwidth="true"/>
@@ -59,7 +59,7 @@
                     <HorizontalLayout height="5"/>
                     <HorizontalLayout height="26" >
         				<Control width="20"/>
-        				<Label text="折扣和服务：" autocalcwidth="true"/>
+        				<Label text="折扣和服务:" textcolor="#FF666666" autocalcwidth="true"/>
         				<Control width="10"/>
         				<CheckBox name="checkbox_mian_yun_fei" width="26" normalimage="file='bitmap\CHECK_BOX.png' source='0,0,17,17' dest='4,4,21,21' " hotimage="file='bitmap\CHECK_BOX.png' source='17,0,34,17' dest='4,4,21,21'" pushedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedhotimage="file='bitmap\CHECK_BOX.png' source='68,0,85,17' dest='4,4,21,21'" selectedpushedimage="file='bitmap\CHECK_BOX.png' source='85,0,102,17' dest='4,4,21,21'" />
         				<Label text="免运费" autocalcwidth="true"/>
@@ -82,7 +82,7 @@
         				<CheckBox name="checkbox_cu_xiao" width="26" normalimage="file='bitmap\CHECK_BOX.png' source='0,0,17,17' dest='4,4,21,21' " hotimage="file='bitmap\CHECK_BOX.png' source='17,0,34,17' dest='4,4,21,21'" pushedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedhotimage="file='bitmap\CHECK_BOX.png' source='68,0,85,17' dest='4,4,21,21'" selectedpushedimage="file='bitmap\CHECK_BOX.png' source='85,0,102,17' dest='4,4,21,21'" />
         				<Label text="促销" autocalcwidth="true"/>
         				<Control width="10"/>
-        				<Label text="发货地：" autocalcwidth="true"/>
+        				<Label text="发货地:" textcolor="#FF666666" autocalcwidth="true"/>
         				<Combo name="combo_send_place" bordersize="0" width="120" bkimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3'" textpadding="2,2,2,2" normalimage="file='bitmap\BT_DROP_DOWN.png' source='0,0,23,24' dest='97,2,118,24' " hotimage="file='bitmap\BT_DROP_DOWN.png' source='23,0,46,24' dest='97,2,118,24' " pushedimage="file='bitmap\BT_DROP_DOWN.png' source='46,0,69,24' dest='97,2,118,24' " disabledimage="file='bitmap\BT_DROP_DOWN.png' source='69,0,92,24' dest='97,2,118,24' " >
         					<ListLabelElement text="所有地区" selected="true" padding="1,1,1,1" />
         					<ListLabelElement text="江浙沪"  padding="1,1,1,1" />
@@ -150,7 +150,7 @@
         					<ListLabelElement text="哈尔滨"  padding="1,1,1,1"  />
         				</Combo>
         				<Control width="10"/>
-        				<Label text="搜索宝贝最大时间(秒):" autocalcwidth="true"/>
+        				<Label text="搜索宝贝最大时间(秒):" textcolor="#FF666666" autocalcwidth="true"/>
         				<Edit name="edit_max_search_time" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width=""/>
         				<Control width="20"/>
                     </HorizontalLayout>
@@ -158,7 +158,7 @@
                     <HorizontalLayout height="5"/>
                     <HorizontalLayout height="26" >
         				<Control width="20"/>
-        				<Label text="宝贝链接：" autocalcwidth="true"/>
+        				<Label text="宝贝链接:" textcolor="#FF666666" autocalcwidth="true"/>
         				<Edit name="edit_baobei_url" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width=""/>
 
         				<Control width="20"/>
@@ -173,28 +173,28 @@
                     <HorizontalLayout height="5"/>
                     <HorizontalLayout height="26" >
         				<Control width="20"/>
-						<Label text="浏览主宝贝的时间(秒):" autocalcwidth="true" />
+						<Label text="浏览主宝贝的时间(秒):" textcolor="#FF666666" autocalcwidth="true" />
         				<Edit name="edit_view_main_baobei_time" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="60"/>
         				<Control width="20"/>
-						<Label text="浏览副宝贝的数量:" autocalcwidth="true" />
+						<Label text="浏览副宝贝的数量:" textcolor="#FF666666" autocalcwidth="true" />
 						<Combo name="combo_fu_baobei_count" bordersize="0" width="60" bkimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3'" textpadding="2,2,2,2" normalimage="file='bitmap\BT_DROP_DOWN.png' source='0,0,23,24' dest='37,2,58,24' " hotimage="file='bitmap\BT_DROP_DOWN.png' source='23,0,46,24' dest='37,2,58,24' " pushedimage="file='bitmap\BT_DROP_DOWN.png' source='46,0,69,24' dest='37,2,58,24' " disabledimage="file='bitmap\BT_DROP_DOWN.png' source='69,0,92,24' dest='37,2,58,24' " >
 	        					<ListLabelElement text="1" selected="true" padding="1,1,1,1" />
 	        					<ListLabelElement text="2" padding="1,1,1,1" />
 	        					<ListLabelElement text="3" padding="1,1,1,1" />
 	        			</Combo>
         				<Control width="20"/>
-						<Label text="浏览副宝贝的时间(秒):" autocalcwidth="true" />
+						<Label text="浏览副宝贝的时间(秒):" textcolor="#FF666666" autocalcwidth="true" />
         				<Edit name="edit_view_fubaobei_time" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="60"/>
         				<Control width="20"/>
-						<Label text="货比" autocalcwidth="true" />
+						<Label text="货比" autocalcwidth="true"  textcolor="#FF666666"/>
         				<Combo name="edit_target_compare_count" bordersize="0" width="60" bkimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3'" textpadding="2,2,2,2" normalimage="file='bitmap\BT_DROP_DOWN.png' source='0,0,23,24' dest='37,2,58,24' " hotimage="file='bitmap\BT_DROP_DOWN.png' source='23,0,46,24' dest='37,2,58,24' " pushedimage="file='bitmap\BT_DROP_DOWN.png' source='46,0,69,24' dest='37,2,58,24' " disabledimage="file='bitmap\BT_DROP_DOWN.png' source='69,0,92,24' dest='37,2,58,24' " >
 	        					<ListLabelElement text="1" selected="true" padding="1,1,1,1" />
 	        					<ListLabelElement text="2" padding="1,1,1,1" />
 	        					<ListLabelElement text="3" padding="1,1,1,1" />
 	        			</Combo>
-						<Label text="家再进店" autocalcwidth="true" />
+						<Label text="家再进店" textcolor="#FF666666" autocalcwidth="true" />
         				<Control width="20"/>
-						<Label text="其他店铺浏览时间(秒):" autocalcwidth="true" />
+						<Label text="其他店铺浏览时间(秒):" textcolor="#FF666666" autocalcwidth="true" />
         				<Edit name="edit_view_other_shop_time" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width=""/>
 
         				<Control width="20"/>
@@ -202,6 +202,7 @@
                     <HorizontalLayout height="5"/>
                     <HorizontalLayout height="26">
         				<Control width="20"/>
+						<Label text="需要执行的操作(多选):" textcolor="#FF666666" autocalcwidth="true" />
         				<CheckBox name="checkbox_zhan_xian_baobei" width="26" normalimage="file='bitmap\CHECK_BOX.png' source='0,0,17,17' dest='4,4,21,21' " hotimage="file='bitmap\CHECK_BOX.png' source='17,0,34,17' dest='4,4,21,21'" pushedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedhotimage="file='bitmap\CHECK_BOX.png' source='68,0,85,17' dest='4,4,21,21'" selectedpushedimage="file='bitmap\CHECK_BOX.png' source='85,0,102,17' dest='4,4,21,21'" />
         				<Label text="展现宝贝" autocalcwidth="true"/>
         				<Control width="10"/>
@@ -226,6 +227,43 @@
 				</VerticalLayout>
 				<HorizontalLayout height="2"/>
 				<VerticalLayout bkcolor="#FFECEEFF">
+
+
+					<HorizontalLayout height="5" />
+					<HorizontalLayout height="26">
+        				<Control width="20"/>
+        				<CheckBox name="checkbox_timer_for_publish" width="26" normalimage="file='bitmap\CHECK_BOX.png' source='0,0,17,17' dest='4,4,21,21' " hotimage="file='bitmap\CHECK_BOX.png' source='17,0,34,17' dest='4,4,21,21'" pushedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedhotimage="file='bitmap\CHECK_BOX.png' source='68,0,85,17' dest='4,4,21,21'" selectedpushedimage="file='bitmap\CHECK_BOX.png' source='85,0,102,17' dest='4,4,21,21'" />
+        				<Label text="定时发布任务:" textcolor="#FF666666" autocalcwidth="true"/>
+        				<Edit name="edit_publish_timer_year" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="40"/>
+        				<Label text="年" autocalcwidth="true"/>
+        				<Edit name="edit_publish_timer_month" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="40"/>
+        				<Label text="月" autocalcwidth="true"/>
+        				<Edit name="edit_publish_timer_day" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="40"/>
+        				<Label text="日" autocalcwidth="true"/>
+        				<Edit name="edit_publish_timer_hour" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="40"/>
+        				<Label text="时" autocalcwidth="true"/>
+        				<Edit name="edit_publish_timer_minute" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="40"/>
+        				<Label text="分(如2015年11月23日13时55分)" autocalcwidth="true"/>
+        				<Control width="20"/>
+        				<Label text="流量时间间隔(秒):" textcolor="#FF666666" autocalcwidth="true"/>
+        				<Edit name="edit_publish_time_split" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="60"/>
+        				<Control width="20"/>
+						
+        				<Label text="任务数量:" textcolor="#FF666666" autocalcwidth="true"/>
+        				<Edit name="edit_publish_count" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="40"/>
+        				<Label text="(任务发布后被执行的次数)" autocalcwidth="true"/>
+
+					</HorizontalLayout>
+					<HorizontalLayout height="15" />
+					<HorizontalLayout height="36">
+						<Control  />
+                        <Button name="ButtonUI_Check_found_or_not" width="210" text="检测指定时间内能否找到宝贝" textcolor="#FFFF0000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file='bitmap\BT_DEFAULT.png' source='0,0,69,22'  corner='8,8,8,8' " hotimage="file='bitmap\BT_DEFAULT.png' source='69,0,138,22'  corner='8,8,8,8' " pushedimage="file='bitmap\BT_DEFAULT.png' source='138,0,207,22'  corner='8,8,8,8' " disabledimage="file='bitmap\BT_DEFAULT.png' source='207,0,276,22'   corner='8,8,8,8' " />
+						<Control  width="60"/>
+                        <Button name="ButtonUI_publish_task" width="70" text="发布任务" textcolor="#FFFF0000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file='bitmap\BT_DEFAULT.png' source='0,0,69,22'  corner='8,8,8,8' " hotimage="file='bitmap\BT_DEFAULT.png' source='69,0,138,22'  corner='8,8,8,8' " pushedimage="file='bitmap\BT_DEFAULT.png' source='138,0,207,22'  corner='8,8,8,8' " disabledimage="file='bitmap\BT_DEFAULT.png' source='207,0,276,22'   corner='8,8,8,8' " />
+						<Control width="120" />
+					</HorizontalLayout>
+
+
 				</VerticalLayout>
 
 				<HorizontalLayout height="5" /><!--bottom split-->
