@@ -50,5 +50,7 @@ private:
 	CLabelUI*  m_pLabelTaskStatus;
 	CButtonUI* m_pCreateLoginBtn;
 	UiLib::CTabLayoutUI* m_pTabCtrl;
+
+	CPublishTaskPageUI *m_pPublishTaskPage;
 };
 

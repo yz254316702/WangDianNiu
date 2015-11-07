@@ -21,11 +21,11 @@
     	</HorizontalLayout>
         <TabLayout name="main_frame_tabCtrl">
           <HorizontalLayout>
-            <DoTaskPage />
+            <DoTaskPage name="Page_DoTask" />
           </HorizontalLayout>
           
           <HorizontalLayout>
-            <PublishTaskPage />
+            <PublishTaskPage name="Page_PublishTask" />
           </HorizontalLayout>
 
         </TabLayout>

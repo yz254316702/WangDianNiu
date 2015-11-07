@@ -162,7 +162,8 @@ void CMainWnd::InitWindow()
 			m_pWke->SetURL(L"http://www.baidu.com"); //一个漂亮的网站，大家可以自己试试
 		}
 #endif
-
+		//publish 
+		m_pPublishTaskPage = static_cast<CPublishTaskPageUI*>(m_PaintManager.FindControl(_T("Page_PublishTask")));
 	}
 	catch (...)
 	{
@@ -205,6 +206,66 @@ void CMainWnd::Notify( TNotifyUI& msg )
 		else if( msg.pSender->GetName() == _T("OptionUI_PublishTask"))
 		{
 			m_pTabCtrl->SelectItem(1);
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pCheckbox_price_min_max)
+		{
+			m_pPublishTaskPage->OnSelectChange_Checkbox_price_min_max();
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pCheckbox_mian_yun_fei)
+		{
+			m_pPublishTaskPage->OnSelectChange_Checkbox_mian_yun_fei();
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pCheckbox_tian_mao)
+		{
+			m_pPublishTaskPage->OnSelectChange_Checkbox_tian_mao();
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pCheckbox_shouji_zhuanxiang)
+		{
+			m_pPublishTaskPage->OnSelectChange_Checkbox_shouji_zhuanxiang();
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pCheckbox_jinbi_money)
+		{
+			m_pPublishTaskPage->OnSelectChange_Checkbox_jinbi_money();
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pCheckbox_huo_dao_fu_kuan)
+		{
+			m_pPublishTaskPage->OnSelectChange_Checkbox_huo_dao_fu_kuan();
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pCheckbox_qitian_tui_huo)
+		{
+			m_pPublishTaskPage->OnSelectChange_Checkbox_qitian_tui_huo();
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pCheckbox_cu_xiao)
+		{
+			m_pPublishTaskPage->OnSelectChange_Checkbox_cu_xiao();
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pCheckbox_zhan_xian_baobei)
+		{
+			m_pPublishTaskPage->OnSelectChange_Checkbox_zhan_xian_baobei();
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pCheckbox_chakan_chanpin_canshu)
+		{
+			m_pPublishTaskPage->OnSelectChange_Checkbox_chakan_chanpin_canshu();
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pCheckbox_view_shop_homepage)
+		{
+			m_pPublishTaskPage->OnSelectChange_Checkbox_view_shop_homepage();
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pCheckbox_view_baobei_pingjia)
+		{
+			m_pPublishTaskPage->OnSelectChange_Checkbox_view_baobei_pingjia();
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pCheckbox_shoucang_baobei)
+		{
+			m_pPublishTaskPage->OnSelectChange_Checkbox_shoucang_baobei();
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pCheckbox_zhi_tong_che)
+		{
+			m_pPublishTaskPage->OnSelectChange_Checkbox_zhi_tong_che();
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pCheckbox_timer_for_publish)
+		{
+			m_pPublishTaskPage->OnSelectChange_Checkbox_timer_for_publish();
 		}
 	}
 	WindowImplBase::Notify(msg);

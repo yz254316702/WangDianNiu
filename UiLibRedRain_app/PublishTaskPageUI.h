@@ -5,6 +5,7 @@ class CPublishTaskPageUI: public CContainerUI
 public:
 	CPublishTaskPageUI(CPaintManagerUI* pm);
 	virtual ~CPublishTaskPageUI(void);
+	virtual void DoInit();
 private:
 	CPublishTaskPageUI(void);
 
@@ -13,7 +14,7 @@ private:
 	CDialogBuilder m_builder;
 
 public:
-	CWkeWebkitUI *m_pWkeWebkit;
+	DuiLib::CWkeWebkitUI *m_pWkeWebkit;
 	DuiLib::CEditUI *m_pEdit_total_title;
 	DuiLib::CEditUI *m_pEdit_fu_biao_ti;
 	DuiLib::CEditUI *m_pEdit_search_key;
@@ -56,5 +57,37 @@ public:
 
 	DuiLib::CButtonUI *m_pButtonUI_Check_found_or_not;
 	DuiLib::CButtonUI *m_pButtonUI_publish_task;
+
+	bool m_bprice_min_maxChecked;
+	void OnSelectChange_Checkbox_price_min_max();
+	bool m_bmian_yun_feiChecked;
+	void OnSelectChange_Checkbox_mian_yun_fei();
+	bool m_btian_maoChecked;
+	void OnSelectChange_Checkbox_tian_mao();
+	bool m_bshouji_zhuanxiangChecked;
+	void OnSelectChange_Checkbox_shouji_zhuanxiang();
+	bool m_bjinbi_moneyChecked;
+	void OnSelectChange_Checkbox_jinbi_money();
+	bool m_bhuo_dao_fu_kuanChecked;
+	void OnSelectChange_Checkbox_huo_dao_fu_kuan();
+	bool m_bqitian_tui_huoChecked;
+	void OnSelectChange_Checkbox_qitian_tui_huo();
+	bool m_bcu_xiaoChecked;
+	void OnSelectChange_Checkbox_cu_xiao();
+	bool m_bzhan_xian_baobeiChecked;
+	void OnSelectChange_Checkbox_zhan_xian_baobei();
+	bool m_bchakan_chanpin_canshuChecked;
+	void OnSelectChange_Checkbox_chakan_chanpin_canshu();
+	bool m_bview_shop_homepageChecked;
+	void OnSelectChange_Checkbox_view_shop_homepage();
+	bool m_bview_baobei_pingjiaChecked;
+	void OnSelectChange_Checkbox_view_baobei_pingjia();
+	bool m_bshoucang_baobeiChecked;
+	void OnSelectChange_Checkbox_shoucang_baobei();
+	bool m_bMinMaxPriceChecked;
+	void OnSelectChange_Checkbox_zhi_tong_che();
+	bool m_btimer_for_publishChecked;
+	void OnSelectChange_Checkbox_timer_for_publish();
+
 };
 
