@@ -37,8 +37,16 @@ public:
 
 	CControlUI* CreateControl(LPCTSTR pstrClass) 
 	{
-		if( _tcscmp(pstrClass, _T(DO_TASK_PAGE)) == 0 ) return new CDoTaskPageUI(&m_PaintManager);
-		else if ( _tcscmp(pstrClass, _T(PUBLISH_TASK_PAGE)) == 0 ) return new CPublishTaskPageUI(&m_PaintManager);
+		if( _tcscmp(pstrClass, _T(DO_TASK_PAGE)) == 0 )
+		{
+			printf("CreateControl --- DO_TASK_PAGE\n");
+			return new CDoTaskPageUI(&m_PaintManager);
+		}
+		else if ( _tcscmp(pstrClass, _T(PUBLISH_TASK_PAGE)) == 0 ) 
+		{
+			printf("CreateControl --- PUBLISH_TASK_PAGE\n");
+			return new CPublishTaskPageUI(&m_PaintManager);
+		}
 		return NULL;
 	}
 private:

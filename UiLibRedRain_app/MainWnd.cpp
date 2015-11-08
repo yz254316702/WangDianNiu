@@ -164,6 +164,8 @@ void CMainWnd::InitWindow()
 #endif
 		//publish 
 		m_pPublishTaskPage = static_cast<CPublishTaskPageUI*>(m_PaintManager.FindControl(_T("Page_PublishTask")));
+		m_pPublishTaskPage->DoInit11();
+		printf(" CMainWnd::InitWindow\n");
 	}
 	catch (...)
 	{
