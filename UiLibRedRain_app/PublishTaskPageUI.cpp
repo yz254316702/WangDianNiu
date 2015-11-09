@@ -30,12 +30,30 @@ CPublishTaskPageUI::CPublishTaskPageUI( CPaintManagerUI* pm )
 ,m_bview_shop_homepageChecked(false)
 ,m_bview_baobei_pingjiaChecked(false)
 ,m_bshoucang_baobeiChecked(false)
-,m_bMinMaxPriceChecked(false)
+,m_bzhi_tong_cheChecked(false)
 ,m_btimer_for_publishChecked(false)
 ,m_sCombo_search_sort(_T(""))
 ,m_sCombo_send_place(_T(""))
 ,m_iCombo_fu_baobei_count(0)
 ,m_iCombo_target_compare_count(0)
+,m_sEdit_total_title(_T(""))
+,m_sEdit_fu_biao_ti(_T(""))
+,m_sEdit_search_key(_T(""))
+,m_sEdit_target_price(_T(""))
+,m_sEdit_target_price_min(_T(""))
+,m_sEdit_target_price_max(_T(""))
+,m_sEdit_max_search_time(_T(""))
+,m_sEdit_baobei_url(_T(""))
+,m_sEdit_view_main_baobei_time(_T(""))
+,m_sEdit_view_fubaobei_time(_T(""))
+,m_sEdit_view_other_shop_time(_T(""))
+,m_sEdit_publish_timer_year(_T(""))
+,m_sEdit_publish_timer_month(_T(""))
+,m_sEdit_publish_timer_day(_T(""))
+,m_sEdit_publish_timer_hour(_T(""))
+,m_sEdit_publish_timer_minute(_T(""))
+,m_sEdit_publish_time_split(_T(""))
+,m_sEdit_publish_count(_T(""))
 {
 	CContainerUI* pDoTaskPage = static_cast<CContainerUI*>(m_builder.Create(_T("PublishTaskPage.xml"), (UINT)0,NULL,m_pPaintManager));
 	printf("pDoTaskPage is %p\n",pDoTaskPage);
@@ -57,6 +75,8 @@ CPublishTaskPageUI::~CPublishTaskPageUI(void)
 void CPublishTaskPageUI::OnSelectChange_Checkbox_price_min_max()
 {
 	m_bprice_min_maxChecked = m_pCheckbox_price_min_max->IsSelected();
+	m_pEdit_target_price_min->SetEnabled(m_bprice_min_maxChecked);
+	m_pEdit_target_price_max->SetEnabled(m_bprice_min_maxChecked);
 }
 void CPublishTaskPageUI::OnSelectChange_Checkbox_mian_yun_fei()
 {
@@ -108,37 +128,95 @@ void CPublishTaskPageUI::OnSelectChange_Checkbox_shoucang_baobei()
 }
 void CPublishTaskPageUI::OnSelectChange_Checkbox_zhi_tong_che()
 {
-	m_bzhan_xian_baobeiChecked = m_pCheckbox_zhi_tong_che->IsSelected();
+	m_bzhi_tong_cheChecked = m_pCheckbox_zhi_tong_che->IsSelected();
 }
 void CPublishTaskPageUI::OnSelectChange_Checkbox_timer_for_publish()
 {
 	m_btimer_for_publishChecked = m_pCheckbox_timer_for_publish->IsSelected();
+
+	m_pEdit_publish_timer_year->SetEnabled(m_btimer_for_publishChecked);
+	m_pEdit_publish_timer_month->SetEnabled(m_btimer_for_publishChecked);
+	m_pEdit_publish_timer_day->SetEnabled(m_btimer_for_publishChecked);
+	m_pEdit_publish_timer_hour->SetEnabled(m_btimer_for_publishChecked);
+	m_pEdit_publish_timer_minute->SetEnabled(m_btimer_for_publishChecked);
 }
 
 void CPublishTaskPageUI::OnItemSelect_ComboSearchSort()
 {
-	m_sCombo_search_sort = m_pCombo_search_sort->GetItemAt(m_pCombo_search_sort->GetCurSel())->GetText();
+	m_sCombo_search_sort = m_pCombo_search_sort->GetText();
 }
 void CPublishTaskPageUI::OnItemSelect_ComboSendPlace()
 {
-	m_sCombo_send_place = m_pCombo_send_place->GetItemAt(m_pCombo_send_place->GetCurSel())->GetText();
+	m_sCombo_send_place = m_pCombo_send_place->GetText();
 }
 void CPublishTaskPageUI::OnItemSelect_ComboFuBaoBeiCount()
 {
-	m_iCombo_fu_baobei_count = m_pCombo_fu_baobei_count->GetCurSel();
+	m_iCombo_fu_baobei_count = m_pCombo_fu_baobei_count->GetCurSel()+1;
 }
 void CPublishTaskPageUI::OnItemSelect_ComboTargetCompareCount()
 {
-	m_iCombo_target_compare_count = m_pCombo_target_compare_count->GetCurSel();
+	m_iCombo_target_compare_count = m_pCombo_target_compare_count->GetCurSel()+1;
 }
 
-void OnBtnClick_ButtonUI_Check_found_or_not()
+void CPublishTaskPageUI::OnBtnClick_ButtonUI_Check_found_or_not()
 {
 
 }
-void OnBtnClick_ButtonUI_publish_task()
+void CPublishTaskPageUI::OnBtnClick_ButtonUI_publish_task()
 {
-
+	m_sEdit_total_title				= m_pEdit_total_title->GetText();
+	m_sEdit_fu_biao_ti				= m_pEdit_fu_biao_ti->GetText();
+	m_sEdit_search_key				= m_pEdit_search_key->GetText();
+	m_sEdit_target_price			= m_pEdit_target_price->GetText();
+	m_sEdit_target_price_min		= m_pEdit_target_price_min->GetText();
+	m_sEdit_target_price_max		= m_pEdit_target_price_max->GetText();
+	m_sEdit_max_search_time			= m_pEdit_max_search_time->GetText();
+	m_sEdit_baobei_url				= m_pEdit_baobei_url->GetText();
+	m_sEdit_view_main_baobei_time	= m_pEdit_view_main_baobei_time->GetText();
+	m_sEdit_view_fubaobei_time		= m_pEdit_view_fubaobei_time->GetText();
+	m_sEdit_view_other_shop_time	= m_pEdit_view_other_shop_time->GetText();
+	m_sEdit_publish_timer_year		= m_pEdit_publish_timer_year->GetText();
+	m_sEdit_publish_timer_month		= m_pEdit_publish_timer_month->GetText();
+	m_sEdit_publish_timer_day		= m_pEdit_publish_timer_day->GetText();
+	m_sEdit_publish_timer_hour		= m_pEdit_publish_timer_hour->GetText();
+	m_sEdit_publish_timer_minute	= m_pEdit_publish_timer_minute->GetText();
+	m_sEdit_publish_time_split		= m_pEdit_publish_time_split->GetText();
+	m_sEdit_publish_count			= m_pEdit_publish_count->GetText();
+	printf(("手机搜索列表中完整的宝贝标题:%s\n"),m_sEdit_total_title.GetStringA().c_str());
+	printf(("副标题:%s\n"),m_sEdit_fu_biao_ti.GetStringA().c_str());
+	printf(("搜索关键字:%s\n"),m_sEdit_search_key.GetStringA().c_str());
+	printf(("商品价格:%s\n"),m_sEdit_target_price.GetStringA().c_str());
+	printf(("排序类型:%s\n"),m_sCombo_search_sort.GetStringA().c_str());
+	printf(("限价区间:%d\n"),m_bzhan_xian_baobeiChecked);
+	printf(("限价区间 MIN:%s  MAX:%s\n"),m_sEdit_target_price_min.GetStringA().c_str(),m_sEdit_target_price_max.GetStringA().c_str());
+	printf("折扣和服务  免运费 %d\n",m_bmian_yun_feiChecked);
+	printf("折扣和服务  天猫 %d\n",m_btian_maoChecked);
+	printf("折扣和服务  手机专享 %d\n",m_bshouji_zhuanxiangChecked);
+	printf("折扣和服务  淘金币抵钱 %d\n",m_bjinbi_moneyChecked);
+	printf("折扣和服务  货到付款 %d\n",m_bhuo_dao_fu_kuanChecked);
+	printf("折扣和服务  7+天退换货 %d\n",m_bqitian_tui_huoChecked);
+	printf("折扣和服务  促销 %d\n",m_bcu_xiaoChecked);
+	printf("发货地:%s\n",m_sCombo_send_place.GetStringA().c_str());
+	printf(("搜索宝贝最大时间:%s\n"),m_sEdit_max_search_time.GetStringA().c_str());
+	printf(("宝贝链接:%s\n"),m_sEdit_baobei_url.GetStringA().c_str());
+	printf(("浏览主宝贝的时间:%s\n"),m_sEdit_view_main_baobei_time.GetStringA().c_str());
+	printf("浏览副宝贝的数量 %d\n",m_iCombo_fu_baobei_count);
+	printf("货比%d家再进店\n",m_iCombo_target_compare_count);
+	printf(("浏览副宝贝的时间:%s\n"),m_sEdit_view_fubaobei_time.GetStringA().c_str());
+	printf(("其他店铺浏览时间:%s\n"),m_sEdit_view_other_shop_time.GetStringA().c_str());
+	printf("需要执行的操作  展现宝贝  %d\n",m_bzhan_xian_baobeiChecked);
+	printf("需要执行的操作  查看产品参数  %d\n",m_bchakan_chanpin_canshuChecked);
+	printf("需要执行的操作  浏览店铺首页  %d\n",m_bview_shop_homepageChecked);
+	printf("需要执行的操作  浏览宝贝评价  %d\n",m_bview_baobei_pingjiaChecked);
+	printf("需要执行的操作  收藏宝贝  %d\n",m_bshoucang_baobeiChecked);
+	printf("需要执行的操作  直通车  %d\n",m_bzhi_tong_cheChecked);
+	printf(("定时发布任务 %s年%s月%s日%s时%s分\n"),m_sEdit_publish_timer_year.GetStringA().c_str()
+		,m_sEdit_publish_timer_month.GetStringA().c_str()
+		,m_sEdit_publish_timer_day.GetStringA().c_str()
+		,m_sEdit_publish_timer_hour.GetStringA().c_str()
+		,m_sEdit_publish_timer_minute.GetStringA().c_str());
+	printf(("流量时间间隔:%s\n"),m_sEdit_publish_time_split.GetStringA().c_str());
+	printf(("任务数量:%s\n"),m_sEdit_publish_count.GetStringA().c_str());
 }
 
 void CPublishTaskPageUI::CtrlInit()
@@ -225,6 +303,47 @@ void CPublishTaskPageUI::CtrlInit()
 	if (!m_pButtonUI_Check_found_or_not) printf("m_pButtonUI_Check_found_or_not is null\n");
 	m_pButtonUI_publish_task = static_cast<CButtonUI*>(m_pPaintManager->FindControl(_T("ButtonUI_publish_task")));
 	if (!m_pButtonUI_publish_task) printf("m_pButtonUI_publish_task is null\n");
+	
+	m_sCombo_search_sort = m_pCombo_search_sort->GetText();
+	m_sCombo_send_place = m_pCombo_send_place->GetText();
+	m_iCombo_fu_baobei_count = m_pCombo_fu_baobei_count->GetCurSel()+1;
+	m_iCombo_target_compare_count = m_pCombo_target_compare_count->GetCurSel()+1;
+
+	m_bmian_yun_feiChecked = true;
+	m_pCheckbox_mian_yun_fei->Selected(true);
+	m_bhuo_dao_fu_kuanChecked = true;
+	m_pCheckbox_huo_dao_fu_kuan->Selected(true);
+	m_bzhan_xian_baobeiChecked = true;
+	m_pCheckbox_zhan_xian_baobei->Selected(true);
+	m_bchakan_chanpin_canshuChecked=true;
+	m_pCheckbox_chakan_chanpin_canshu->Selected(true);
+
+	m_sEdit_max_search_time = _T("120");
+	m_pEdit_max_search_time->SetText(m_sEdit_max_search_time);
+
+	m_sEdit_view_main_baobei_time = _T("60");
+	m_pEdit_view_main_baobei_time->SetText(_T("60"));
+
+	m_sEdit_view_fubaobei_time = _T("20");
+	m_pEdit_view_fubaobei_time->SetText(m_sEdit_view_fubaobei_time);
+
+	m_sEdit_view_other_shop_time = _T("20");
+	m_pEdit_view_other_shop_time->SetText(m_sEdit_view_other_shop_time);
+
+	m_sEdit_publish_time_split = _T("360");
+	m_pEdit_publish_time_split->SetText(m_sEdit_publish_time_split);
+
+	m_sEdit_publish_count = _T("50");
+	m_pEdit_publish_count->SetText(m_sEdit_publish_count);
+
+	m_pEdit_target_price_min->SetEnabled(false);
+	m_pEdit_target_price_max->SetEnabled(false);
+
+	m_pEdit_publish_timer_year->SetEnabled(false);
+	m_pEdit_publish_timer_month->SetEnabled(false);
+	m_pEdit_publish_timer_day->SetEnabled(false);
+	m_pEdit_publish_timer_hour->SetEnabled(false);
+	m_pEdit_publish_timer_minute->SetEnabled(false);
 }
 
 LPCTSTR CPublishTaskPageUI::GetClass() const

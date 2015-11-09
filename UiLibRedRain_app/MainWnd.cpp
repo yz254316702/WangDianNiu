@@ -198,6 +198,14 @@ void CMainWnd::Notify( TNotifyUI& msg )
 			OnBnClickedButtonLogin();
 			return;
 		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pButtonUI_Check_found_or_not)
+		{
+			m_pPublishTaskPage->OnBtnClick_ButtonUI_Check_found_or_not();
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pButtonUI_publish_task)
+		{
+			m_pPublishTaskPage->OnBtnClick_ButtonUI_publish_task();
+		}
 	}
 	else if ( msg.sType == DUI_MSGTYPE_SELECTCHANGED )
 	{	
@@ -291,7 +299,7 @@ void CMainWnd::Notify( TNotifyUI& msg )
 	}
 	else
 	{
-		wprintf(_T("CMainWnd::Notify  - type = %s\n"),msg.sType);
+		//wprintf(_T("CMainWnd::Notify  - type = %s\n"),msg.sType);
 	}
 	WindowImplBase::Notify(msg);
 }
