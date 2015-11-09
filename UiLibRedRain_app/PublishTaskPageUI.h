@@ -5,7 +5,7 @@ class CPublishTaskPageUI: public CContainerUI
 public:
 	CPublishTaskPageUI(CPaintManagerUI* pm);
 	virtual ~CPublishTaskPageUI(void);
-	virtual void DoInit11();
+	virtual void CtrlInit();
 	virtual LPCTSTR GetClass() const;
 	virtual LPVOID GetInterface(LPCTSTR pstrName);
 private:
@@ -60,6 +60,9 @@ public:
 	DuiLib::CButtonUI	*m_pButtonUI_Check_found_or_not;
 	DuiLib::CButtonUI	*m_pButtonUI_publish_task;
 
+	void OnBtnClick_ButtonUI_Check_found_or_not();
+	void OnBtnClick_ButtonUI_publish_task();
+
 	bool m_bprice_min_maxChecked;
 	void OnSelectChange_Checkbox_price_min_max();
 	bool m_bmian_yun_feiChecked;
@@ -91,5 +94,14 @@ public:
 	bool m_btimer_for_publishChecked;
 	void OnSelectChange_Checkbox_timer_for_publish();
 
+
+	DuiLib::CDuiString	m_sCombo_search_sort;
+	DuiLib::CDuiString	m_sCombo_send_place;
+	int					m_iCombo_fu_baobei_count;
+	int					m_iCombo_target_compare_count;
+	void OnItemSelect_ComboSearchSort();
+	void OnItemSelect_ComboSendPlace();
+	void OnItemSelect_ComboFuBaoBeiCount();
+	void OnItemSelect_ComboTargetCompareCount();
 };
 

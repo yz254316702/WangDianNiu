@@ -15,8 +15,27 @@ m_pPaintManager(NULL)
 	}
 }
 
-CPublishTaskPageUI::CPublishTaskPageUI( CPaintManagerUI* pm ):
-m_pPaintManager(pm)
+CPublishTaskPageUI::CPublishTaskPageUI( CPaintManagerUI* pm )
+:m_pPaintManager(pm)
+,m_bprice_min_maxChecked(false)
+,m_bmian_yun_feiChecked(false)
+,m_btian_maoChecked(false)
+,m_bshouji_zhuanxiangChecked(false)
+,m_bjinbi_moneyChecked(false)
+,m_bhuo_dao_fu_kuanChecked(false)
+,m_bqitian_tui_huoChecked(false)
+,m_bcu_xiaoChecked(false)
+,m_bzhan_xian_baobeiChecked(false)
+,m_bchakan_chanpin_canshuChecked(false)
+,m_bview_shop_homepageChecked(false)
+,m_bview_baobei_pingjiaChecked(false)
+,m_bshoucang_baobeiChecked(false)
+,m_bMinMaxPriceChecked(false)
+,m_btimer_for_publishChecked(false)
+,m_sCombo_search_sort(_T(""))
+,m_sCombo_send_place(_T(""))
+,m_iCombo_fu_baobei_count(0)
+,m_iCombo_target_compare_count(0)
 {
 	CContainerUI* pDoTaskPage = static_cast<CContainerUI*>(m_builder.Create(_T("PublishTaskPage.xml"), (UINT)0,NULL,m_pPaintManager));
 	printf("pDoTaskPage is %p\n",pDoTaskPage);
@@ -96,7 +115,33 @@ void CPublishTaskPageUI::OnSelectChange_Checkbox_timer_for_publish()
 	m_btimer_for_publishChecked = m_pCheckbox_timer_for_publish->IsSelected();
 }
 
-void CPublishTaskPageUI::DoInit11()
+void CPublishTaskPageUI::OnItemSelect_ComboSearchSort()
+{
+	m_sCombo_search_sort = m_pCombo_search_sort->GetItemAt(m_pCombo_search_sort->GetCurSel())->GetText();
+}
+void CPublishTaskPageUI::OnItemSelect_ComboSendPlace()
+{
+	m_sCombo_send_place = m_pCombo_send_place->GetItemAt(m_pCombo_send_place->GetCurSel())->GetText();
+}
+void CPublishTaskPageUI::OnItemSelect_ComboFuBaoBeiCount()
+{
+	m_iCombo_fu_baobei_count = m_pCombo_fu_baobei_count->GetCurSel();
+}
+void CPublishTaskPageUI::OnItemSelect_ComboTargetCompareCount()
+{
+	m_iCombo_target_compare_count = m_pCombo_target_compare_count->GetCurSel();
+}
+
+void OnBtnClick_ButtonUI_Check_found_or_not()
+{
+
+}
+void OnBtnClick_ButtonUI_publish_task()
+{
+
+}
+
+void CPublishTaskPageUI::CtrlInit()
 {
 	printf(" CPublishTaskPageUI::DoInit  m_pPaintManager = %p\n",m_pPaintManager);
 	m_pEdit_total_title = static_cast<CEditUI*>(m_pPaintManager->FindControl(_T("edit_total_title")));

@@ -164,7 +164,7 @@ void CMainWnd::InitWindow()
 #endif
 		//publish 
 		m_pPublishTaskPage = static_cast<CPublishTaskPageUI*>(m_PaintManager.FindControl(_T("Page_PublishTask")));
-		m_pPublishTaskPage->DoInit11();
+		m_pPublishTaskPage->CtrlInit();
 		printf(" CMainWnd::InitWindow\n");
 	}
 	catch (...)
@@ -269,6 +269,29 @@ void CMainWnd::Notify( TNotifyUI& msg )
 		{
 			m_pPublishTaskPage->OnSelectChange_Checkbox_timer_for_publish();
 		}
+	}
+	else if (msg.sType == DUI_MSGTYPE_ITEMSELECT)
+	{
+		if (msg.pSender == m_pPublishTaskPage->m_pCombo_search_sort)
+		{
+			m_pPublishTaskPage->OnItemSelect_ComboSearchSort();
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pCombo_send_place)
+		{
+			m_pPublishTaskPage->OnItemSelect_ComboSendPlace();
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pCombo_fu_baobei_count)
+		{
+			m_pPublishTaskPage->OnItemSelect_ComboFuBaoBeiCount();
+		}
+		else if (msg.pSender == m_pPublishTaskPage->m_pCombo_target_compare_count)
+		{
+			m_pPublishTaskPage->OnItemSelect_ComboTargetCompareCount();
+		}
+	}
+	else
+	{
+		wprintf(_T("CMainWnd::Notify  - type = %s\n"),msg.sType);
 	}
 	WindowImplBase::Notify(msg);
 }
