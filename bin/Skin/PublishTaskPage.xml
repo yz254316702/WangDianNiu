@@ -35,7 +35,7 @@
         				<Control width="10"/>
         				<Label text="商品价格(元):" textcolor="#FF666666" align="" autocalcwidth="true"/>
         				<Control width="10"/>
-        				<Edit name="edit_target_price" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="100" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'"/>
+        				<Edit name="edit_target_price" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="100" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'" numberonly="true"/>
         				<Control width="10"/>
         				<Label text="排序类型:" textcolor="#FF666666" align="" autocalcwidth="true"/>
         				<Control width="10"/>
@@ -50,9 +50,9 @@
         				<CheckBox name="checkbox_price_min_max" width="26" normalimage="file='bitmap\CHECK_BOX.png' source='0,0,17,17' dest='4,4,21,21' " hotimage="file='bitmap\CHECK_BOX.png' source='17,0,34,17' dest='4,4,21,21'" pushedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedhotimage="file='bitmap\CHECK_BOX.png' source='68,0,85,17' dest='4,4,21,21'" selectedpushedimage="file='bitmap\CHECK_BOX.png' source='85,0,102,17' dest='4,4,21,21'" />
         				<Label text="限价区间(元):" textcolor="#FF666666" autocalcwidth="true"/>
         				<Control width="10"/>
-        				<Edit name="edit_target_price_min" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="100" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'"/>
+        				<Edit name="edit_target_price_min" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="100" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'" numberonly="true"/>
         				<Label text=" - " autocalcwidth="true"/>
-        				<Edit name="edit_target_price_max" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="100" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'"/>
+        				<Edit name="edit_target_price_max" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="100" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'" numberonly="true"/>
 
         				<Control width="20"/>
         			</HorizontalLayout>
@@ -151,7 +151,7 @@
         				</Combo>
         				<Control width="10"/>
         				<Label text="搜索宝贝最大时间(秒):" textcolor="#FF666666" autocalcwidth="true"/>
-        				<Edit name="edit_max_search_time" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'"/>
+        				<Edit name="edit_max_search_time" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'" numberonly="true"/>
         				<Control width="20"/>
                     </HorizontalLayout>
 
@@ -174,7 +174,7 @@
                     <HorizontalLayout height="26" >
         				<Control width="20"/>
 						<Label text="浏览主宝贝的时间(秒):" textcolor="#FF666666" autocalcwidth="true" />
-        				<Edit name="edit_view_main_baobei_time" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="60" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'"/>
+        				<Edit name="edit_view_main_baobei_time" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="60" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'" numberonly="true"/>
         				<Control width="20"/>
 						<Label text="浏览副宝贝的数量:" textcolor="#FF666666" autocalcwidth="true" />
 						<Combo name="combo_fu_baobei_count" bordersize="0" width="60" bkimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3'" textpadding="2,2,2,2" normalimage="file='bitmap\BT_DROP_DOWN.png' source='0,0,23,24' dest='37,2,58,24' " hotimage="file='bitmap\BT_DROP_DOWN.png' source='23,0,46,24' dest='37,2,58,24' " pushedimage="file='bitmap\BT_DROP_DOWN.png' source='46,0,69,24' dest='37,2,58,24' " disabledimage="file='bitmap\BT_DROP_DOWN.png' source='69,0,92,24' dest='37,2,58,24' " >
@@ -184,7 +184,7 @@
 	        			</Combo>
         				<Control width="20"/>
 						<Label text="浏览副宝贝的时间(秒):" textcolor="#FF666666" autocalcwidth="true" />
-        				<Edit name="edit_view_fubaobei_time" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="60" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'"/>
+        				<Edit name="edit_view_fubaobei_time" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="60" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'" numberonly="true"/>
         				<Control width="20"/>
 						<Label text="货比" autocalcwidth="true"  textcolor="#FF666666"/>
         				<Combo name="combo_target_compare_count" bordersize="0" width="60" bkimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3'" textpadding="2,2,2,2" normalimage="file='bitmap\BT_DROP_DOWN.png' source='0,0,23,24' dest='37,2,58,24' " hotimage="file='bitmap\BT_DROP_DOWN.png' source='23,0,46,24' dest='37,2,58,24' " pushedimage="file='bitmap\BT_DROP_DOWN.png' source='46,0,69,24' dest='37,2,58,24' " disabledimage="file='bitmap\BT_DROP_DOWN.png' source='69,0,92,24' dest='37,2,58,24' " >
@@ -195,7 +195,7 @@
 						<Label text="家再进店" textcolor="#FF666666" autocalcwidth="true" />
         				<Control width="20"/>
 						<Label text="其他店铺浏览时间(秒):" textcolor="#FF666666" autocalcwidth="true" />
-        				<Edit name="edit_view_other_shop_time" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'"/>
+        				<Edit name="edit_view_other_shop_time" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'" numberonly="true"/>
 
         				<Control width="20"/>
         			</HorizontalLayout>
@@ -234,23 +234,23 @@
         				<Control width="20"/>
         				<CheckBox name="checkbox_timer_for_publish" width="26" normalimage="file='bitmap\CHECK_BOX.png' source='0,0,17,17' dest='4,4,21,21' " hotimage="file='bitmap\CHECK_BOX.png' source='17,0,34,17' dest='4,4,21,21'" pushedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedimage="file='bitmap\CHECK_BOX.png' source='34,0,51,17' dest='4,4,21,21'" selectedhotimage="file='bitmap\CHECK_BOX.png' source='68,0,85,17' dest='4,4,21,21'" selectedpushedimage="file='bitmap\CHECK_BOX.png' source='85,0,102,17' dest='4,4,21,21'" />
         				<Label text="定时发布任务:" textcolor="#FF666666" autocalcwidth="true"/>
-        				<Edit name="edit_publish_timer_year" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="40" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'"/>
+        				<Edit name="edit_publish_timer_year" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="40" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'" numberonly="true"/>
         				<Label text="年" autocalcwidth="true"/>
-        				<Edit name="edit_publish_timer_month" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="40" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'"/>
+        				<Edit name="edit_publish_timer_month" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="40" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'" numberonly="true"/>
         				<Label text="月" autocalcwidth="true"/>
-        				<Edit name="edit_publish_timer_day" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="40" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'"/>
+        				<Edit name="edit_publish_timer_day" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="40" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'" numberonly="true"/>
         				<Label text="日" autocalcwidth="true"/>
-        				<Edit name="edit_publish_timer_hour" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="40" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'"/>
+        				<Edit name="edit_publish_timer_hour" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="40" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'" numberonly="true"/>
         				<Label text="时" autocalcwidth="true"/>
-        				<Edit name="edit_publish_timer_minute" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="40" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'"/>
+        				<Edit name="edit_publish_timer_minute" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="40" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'" numberonly="true"/>
         				<Label text="分(如2015年11月23日13时55分)" autocalcwidth="true"/>
         				<Control width="20"/>
         				<Label text="流量时间间隔(秒):" textcolor="#FF666666" autocalcwidth="true"/>
-        				<Edit name="edit_publish_time_split" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="60" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'"/>
+        				<Edit name="edit_publish_time_split" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="60" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'" numberonly="true"/>
         				<Control width="20"/>
 						
         				<Label text="任务数量:" textcolor="#FF666666" autocalcwidth="true"/>
-        				<Edit name="edit_publish_count" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="40" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'"/>
+        				<Edit name="edit_publish_count" bordersize="0" normalimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3' " width="40" disabledimage="file='bitmap\EDIT.png' source='90,0,120,26' corner='3,3,3,3'" numberonly="true"/>
         				<Label text="(任务发布后被执行的次数)" autocalcwidth="true"/>
 
 					</HorizontalLayout>

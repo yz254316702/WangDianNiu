@@ -613,8 +613,8 @@ CTaoBaoTask::CTaoBaoTask( std::string xmlPath ,CommandTool *tool)
 	m_bStopManually = false;
 	threadHandle = 0;
 	m_callBack = NULL;
-	setCmdTool(tool);
 	m_dataTool = new CDataSourceTool();
+	setCmdTool(tool);
 }
 
 void CTaoBaoTask::setCmdTool( CommandTool *tool )
