@@ -65,9 +65,6 @@
     <ClCompile Include="core\CommandTool.cpp">
       <Filter>core</Filter>
     </ClCompile>
-    <ClCompile Include="core\DataSourceTool.cpp">
-      <Filter>core</Filter>
-    </ClCompile>
     <ClCompile Include="core\IEventCallBack.cpp">
       <Filter>core</Filter>
     </ClCompile>

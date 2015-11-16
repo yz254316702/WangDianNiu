@@ -178,9 +178,9 @@
         				<Control width="20"/>
 						<Label text="浏览副宝贝的数量:" textcolor="#FF666666" autocalcwidth="true" />
 						<Combo name="combo_fu_baobei_count" bordersize="0" width="60" bkimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3'" textpadding="2,2,2,2" normalimage="file='bitmap\BT_DROP_DOWN.png' source='0,0,23,24' dest='37,2,58,24' " hotimage="file='bitmap\BT_DROP_DOWN.png' source='23,0,46,24' dest='37,2,58,24' " pushedimage="file='bitmap\BT_DROP_DOWN.png' source='46,0,69,24' dest='37,2,58,24' " disabledimage="file='bitmap\BT_DROP_DOWN.png' source='69,0,92,24' dest='37,2,58,24' " >
-	        					<ListLabelElement text="1" selected="true" padding="1,1,1,1" />
+	        					<ListLabelElement text="0" selected="true" padding="1,1,1,1" />
+	        					<ListLabelElement text="1" padding="1,1,1,1" />
 	        					<ListLabelElement text="2" padding="1,1,1,1" />
-	        					<ListLabelElement text="3" padding="1,1,1,1" />
 	        			</Combo>
         				<Control width="20"/>
 						<Label text="浏览副宝贝的时间(秒):" textcolor="#FF666666" autocalcwidth="true" />
@@ -188,9 +188,9 @@
         				<Control width="20"/>
 						<Label text="货比" autocalcwidth="true"  textcolor="#FF666666"/>
         				<Combo name="combo_target_compare_count" bordersize="0" width="60" bkimage="file='bitmap\EDIT.png' source='0,0,30,26' corner='3,3,3,3'" textpadding="2,2,2,2" normalimage="file='bitmap\BT_DROP_DOWN.png' source='0,0,23,24' dest='37,2,58,24' " hotimage="file='bitmap\BT_DROP_DOWN.png' source='23,0,46,24' dest='37,2,58,24' " pushedimage="file='bitmap\BT_DROP_DOWN.png' source='46,0,69,24' dest='37,2,58,24' " disabledimage="file='bitmap\BT_DROP_DOWN.png' source='69,0,92,24' dest='37,2,58,24' " >
-	        					<ListLabelElement text="1" selected="true" padding="1,1,1,1" />
+	        					<ListLabelElement text="0" selected="true" padding="1,1,1,1" />
+	        					<ListLabelElement text="1" padding="1,1,1,1" />
 	        					<ListLabelElement text="2" padding="1,1,1,1" />
-	        					<ListLabelElement text="3" padding="1,1,1,1" />
 	        			</Combo>
 						<Label text="家再进店" textcolor="#FF666666" autocalcwidth="true" />
         				<Control width="20"/>

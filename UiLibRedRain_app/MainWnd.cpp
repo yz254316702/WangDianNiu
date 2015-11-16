@@ -124,8 +124,10 @@ void CMainWnd::InitWindow()
 	try
 	{
 		WindowImplBase::InitWindow();
+
 		m_WndObj = CWangDianNiu_DLL::CreateInstance();
 		m_WndObj->Init(this);
+
 		m_pCheckDeviceBtn = static_cast<CButtonUI*>(m_PaintManager.FindControl(_T("ButtonUI_CheckDevice")));
 		m_pStartTaskBtn = static_cast<CButtonUI*>(m_PaintManager.FindControl(_T("ButtonUI_StartTask")));
 		m_pLabelDeviceStatus = static_cast<CTextUI*>(m_PaintManager.FindControl(_T("LabelUI_DeviceStatus")));
@@ -165,6 +167,7 @@ void CMainWnd::InitWindow()
 		//publish 
 		m_pPublishTaskPage = static_cast<CPublishTaskPageUI*>(m_PaintManager.FindControl(_T("Page_PublishTask")));
 		m_pPublishTaskPage->CtrlInit();
+
 		printf(" CMainWnd::InitWindow\n");
 	}
 	catch (...)

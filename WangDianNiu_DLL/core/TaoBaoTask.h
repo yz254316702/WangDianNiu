@@ -58,6 +58,7 @@ public:
 	void resetTask();
 	void exitTask();
 	void setCmdTool(CommandTool *tool);
+	void setDataTool(CDataSourceTool *tool);
 	void setTaskStatus(int status);
 	void setPageStatus(int status);
 	void refreshXml();

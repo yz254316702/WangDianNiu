@@ -202,7 +202,7 @@ void __cdecl taoBaoTask( LPVOID param )
 			}
 			else if (backStatus == TASK_STATUS_TODO_SEARCH)
 			{
-				if (dataTool->SortType() == ("销量优先"))
+				if (dataTool->sCombo_search_sort() == ("销量优先"))
 				{
 					task->setTaskStatus(TASK_STATUS_CHANGE_SORT_OF_SEARCHED);
 					if (task->m_callBack)
@@ -210,7 +210,7 @@ void __cdecl taoBaoTask( LPVOID param )
 						task->m_callBack->taskStatusCallBack("正在设置搜索结果的排序方式");
 					}
 				}
-				else if (dataTool->SortType() != ("综合排序"))
+				else if (dataTool->sCombo_search_sort() != ("综合排序"))
 				{
 					task->setTaskStatus(TASK_STATUS_PreCHANGE_SORT_OF_SEARCHED);
 					if (task->m_callBack)
@@ -229,7 +229,7 @@ void __cdecl taoBaoTask( LPVOID param )
 			}
 			else if (backStatus == TASK_STATUS_PreCHANGE_SORT_OF_SEARCHED)
 			{
-				if (task->checkElementByText(dataTool->SortType(),task->m_XEp_main))
+				if (task->checkElementByText(dataTool->sCombo_search_sort(),task->m_XEp_main))
 				{
 					task->setTaskStatus(TASK_STATUS_CHANGE_SORT_OF_SEARCHED);
 				}
@@ -262,7 +262,7 @@ void __cdecl taoBaoTask( LPVOID param )
 			}
 			else if (backStatus == TASK_STATUS_CHANGE_MIN_MAX_PRICE)
 			{
-				if (task->getTextById(("com.taobao.taobao:id/user_location"),task->m_XEp_main) != dataTool->SendPlace())
+				if (task->getTextById(("com.taobao.taobao:id/user_location"),task->m_XEp_main) != dataTool->sCombo_send_place())
 				{
 					task->setTaskStatus(TASK_STATUS_CHANGE_SEND_PLACE);
 					if (task->m_callBack)
@@ -278,9 +278,9 @@ void __cdecl taoBaoTask( LPVOID param )
 			else if (backStatus == TASK_STATUS_CHANGE_SEND_PLACE ||
 				     backStatus == TASK_STATUS_SCROLL_IN_SEND_PLACE)
 			{
-				if (task->checkElementByText(dataTool->SendPlace(),task->m_XEp_main))
+				if (task->checkElementByText(dataTool->sCombo_send_place(),task->m_XEp_main))
 				{
-					task->getBoundsByText(dataTool->SendPlace(),task->m_XEp_main,&boundsX,&boundsY,&boundsX2,&boundsY2);
+					task->getBoundsByText(dataTool->sCombo_send_place(),task->m_XEp_main,&boundsX,&boundsY,&boundsX2,&boundsY2);
 					task->getBoundsById(("com.taobao.taobao:id/filter_confirm_btn"),task->m_XEp_main,&boundsX1,&boundsY1,&boundsX12,&boundsY12);
 					if (boundsY+3 < boundsY1)
 					{
@@ -312,7 +312,7 @@ void __cdecl taoBaoTask( LPVOID param )
 				|| backStatus == TASK_STATUS_SEARCH_TITLE)
 			{
 				//if (task->checkElementByText(dataTool->getAllTitleForSearch(),task->m_XEp_main))
-				if(task->checkNodesByIdAndText("com.taobao.taobao:id/title",dataTool->PartOfTitle(),task->m_XEp_main,dataTool->m_targetTitle))
+				if(task->checkNodesByIdAndText("com.taobao.taobao:id/title",dataTool->sEdit_part_of_title(),task->m_XEp_main,dataTool->m_targetTitle))
 				{//task->checkNodesByIdAndText()
 					task->setTaskStatus(TASK_STATUS_CLICK_TITLE_IN);
 					if (task->m_callBack)
@@ -351,9 +351,9 @@ void __cdecl taoBaoTask( LPVOID param )
 					break;
 				}
 				tm_curTime = GetTickCount();
-				if ((tm_curTime-tm_startViewTarget)/1000 > dataTool->getviewTargetTime())
+				if ((tm_curTime-tm_startViewTarget)/1000 > dataTool->sEdit_view_main_baobei_time())
 				{
-					if (dataTool->isViewSecTarget())
+					if (dataTool->iCombo_fu_baobei_count())
 					{
 						backStatus = TASK_STATUS_VIEW_TARGET;
 						task->setTaskStatus(TASK_STATUS_CLICK_SHOP_WHILE_VIEWING_TARGET);
@@ -391,7 +391,7 @@ void __cdecl taoBaoTask( LPVOID param )
 			}
 			else if (backStatus == TASK_STATUS_SEARCH_SEC_TARGET_IN_SHOP)
 			{
-				if (task->checkNodesByIdAndText("com.taobao.taobao:id/title",dataTool->Sec_partOfTitle(),task->m_XEp_main,dataTool->m_sec_targetTitle))
+				if (task->checkNodesByIdAndText("com.taobao.taobao:id/title",dataTool->sEdit_part_of_fu_biao_ti(),task->m_XEp_main,dataTool->m_FuTargetTitle))
 				{
 					task->setTaskStatus(TASK_STATUS_CLICK_SEC_TARGET_TITLE);
 					tm_startViewSecTarget = GetTickCount();
@@ -442,7 +442,7 @@ void __cdecl taoBaoTask( LPVOID param )
 			break;
 		case TASK_STATUS_TODO_SEARCH:
 			//TODO : 很多判断来执行一些操作
-			task->m_CmdTool->typeRawText(dataTool->getSearchKeyStrng());
+			task->m_CmdTool->typeRawText(dataTool->sEdit_search_key());
 			task->click(("com.taobao.taobao:id/searchbtn"),task->m_XEp_main);
 			backStatus = TASK_STATUS_TODO_SEARCH;
 			task->setTaskStatus(TASK_STATUS_REFRESHVIEW);
@@ -454,7 +454,7 @@ void __cdecl taoBaoTask( LPVOID param )
 			task->setTaskStatus(TASK_STATUS_REFRESHVIEW);
 			break;
 		case TASK_STATUS_CLICK_TITLE_IN://点击标题进入宝贝
-			task->clickByText(dataTool->TargetTitle(),task->m_XEp_main);
+			task->clickByText(dataTool->m_targetTitle,task->m_XEp_main);
 			backStatus = TASK_STATUS_CLICK_TITLE_IN;
 			task->setTaskStatus(TASK_STATUS_REFRESHVIEW);
 			break;
@@ -471,7 +471,7 @@ void __cdecl taoBaoTask( LPVOID param )
 		case TASK_STATUS_VIEW_PingLun:
 			task->m_CmdTool->swipe(200,task->m_deviceHeight-task->m_deviceHeight/9,200,task->m_deviceHeight*4/9);
 			tm_curTime = GetTickCount();
-			if (tm_curTime - tm_ViewPingLun > dataTool->ViewPingLunTime()*1000)
+			if (tm_curTime - tm_ViewPingLun > dataTool->m_viewPingLunTime*1000)
 			{
 				backStatus = TASK_STATUS_VIEW_PingLun;
 				task->setTaskStatus(TASK_STATUS_RETURN_TO_VIEWTARGET);
@@ -494,7 +494,7 @@ void __cdecl taoBaoTask( LPVOID param )
 			task->setTaskStatus(TASK_STATUS_REFRESHVIEW);
 			break;
 		case TASK_STATUS_CHANGE_SORT_OF_SEARCHED://选择排序方式
-			task->clickByText(dataTool->SortType(),task->m_XEp_main);
+			task->clickByText(dataTool->sCombo_search_sort(),task->m_XEp_main);
 			backStatus = TASK_STATUS_CHANGE_SORT_OF_SEARCHED;
 			task->setTaskStatus(TASK_STATUS_REFRESHVIEW);
 			Sleep(200);
@@ -505,7 +505,7 @@ void __cdecl taoBaoTask( LPVOID param )
 			task->setTaskStatus(TASK_STATUS_REFRESHVIEW);
 			break;
 		case TASK_STATUS_CHANGE_MIN_MAX_PRICE://输入价格范围
-			if (dataTool->MaxPrice() > 0)
+			if (dataTool->bprice_min_maxChecked())
 			{
 				task->click(("com.taobao.taobao:id/min_price"),task->m_XEp_main);
 				task->m_CmdTool->typeRawText(dataTool->strMinPrice());
@@ -526,7 +526,7 @@ void __cdecl taoBaoTask( LPVOID param )
 			task->setTaskStatus(TASK_STATUS_REFRESHVIEW);
 			break;
 		case TASK_STATUS_CLICK_SEND_PLACE:
-			task->clickByText(dataTool->SendPlace(),task->m_XEp_main);
+			task->clickByText(dataTool->sCombo_send_place(),task->m_XEp_main);
 			backStatus = TASK_STATUS_CLICK_SEND_PLACE;
 			task->setTaskStatus(TASK_STATUS_CONFIRM_SEARCH_FILTER);
 			break;
@@ -556,13 +556,13 @@ void __cdecl taoBaoTask( LPVOID param )
 			task->setTaskStatus(TASK_STATUS_REFRESHVIEW);
 			break;
 		case TASK_STATUS_CLICK_SEC_TARGET_TITLE:
-			task->clickByText(dataTool->Sec_targetTitle(),task->m_XEp_main);
+			task->clickByText(dataTool->m_FuTargetTitle,task->m_XEp_main);
 			backStatus = TASK_STATUS_CLICK_SEC_TARGET_TITLE;
 			task->setTaskStatus(TASK_STATUS_REFRESHVIEW);
 			break;
 		case TASK_STATUS_VIEW_SEC_TARGET:
 			tm_curTime = GetTickCount();
-			if (tm_curTime-tm_startViewSecTarget>dataTool->sec_viewTargetTime()*1000)
+			if (tm_curTime-tm_startViewSecTarget>dataTool->sEdit_view_main_baobei_time()*1000)
 			{
 				task->setTaskStatus(TASK_STATUS_CLOSE_TAOBAO);
 			}
@@ -599,7 +599,7 @@ CTaoBaoTask::CTaoBaoTask(void)
 	m_bStopManually = false;
 	threadHandle = 0;
 	m_callBack = NULL;
-	m_dataTool = new CDataSourceTool();
+	//m_dataTool = new CDataSourceTool();
 }
 
 CTaoBaoTask::CTaoBaoTask( std::string xmlPath ,CommandTool *tool)
@@ -613,11 +613,11 @@ CTaoBaoTask::CTaoBaoTask( std::string xmlPath ,CommandTool *tool)
 	m_bStopManually = false;
 	threadHandle = 0;
 	m_callBack = NULL;
-	m_dataTool = new CDataSourceTool();
+	//m_dataTool = new CDataSourceTool();
 	setCmdTool(tool);
 }
 
-void CTaoBaoTask::setCmdTool( CommandTool *tool )
+void CTaoBaoTask::setCmdTool( CommandTool *tool)
 {
 	if (tool)
 	{
@@ -1090,7 +1090,7 @@ bool CTaoBaoTask::checkNodesByIdAndText( std::string idValue, std::string textVa
 			if (textattr.find(textValue) != -1)
 			{
 				printLog("FOUND   ======= %s\n",textattr.c_str());
-				m_dataTool->TargetTitle(textattr);
+				m_dataTool->m_targetTitle = (textattr);
 				return true;
 			}
 		}
@@ -1126,5 +1126,10 @@ void CTaoBaoTask::exitTask()
 	while(m_willExit == true){
 		Sleep(100);
 	}
+}
+
+void CTaoBaoTask::setDataTool( CDataSourceTool *tool )
+{
+	m_dataTool = tool;
 }
 

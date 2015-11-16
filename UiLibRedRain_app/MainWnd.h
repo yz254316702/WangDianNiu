@@ -4,7 +4,7 @@
 #include "DoTaskPageUI.h"
 #include "PublishTaskPageUI.h"
 
-class CMainWnd:public WindowImplBase, public IEventCallBack,  public CWkeWebkitLoadCallback  
+class CMainWnd:public WindowImplBase, public IEventCallBack,  public CWkeWebkitLoadCallback 
 {
 public:
 	CMainWnd(void);
@@ -17,6 +17,7 @@ public:
 	virtual void    OnLoadFailed();  
 	virtual void    OnLoadComplete();  
 	virtual void    OnDocumentReady();
+
 
 	bool OnMsgBtnMouseEnter( TEventUI* pTEventUI,LPARAM lParam,WPARAM wParam );
 	bool OnMsgBtnMouseLeave( TEventUI* pTEventUI,LPARAM lParam,WPARAM wParam );

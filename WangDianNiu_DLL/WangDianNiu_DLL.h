@@ -14,6 +14,7 @@
 class IEventCallBack;
 class CTaoBaoTask;
 class CommandTool;
+class CDataSourceTool;
 // This class is exported from the WangDianNiu_DLL.dll
 class WANGDIANNIU_DLL_API CWangDianNiu_DLL {
 public:
@@ -21,7 +22,7 @@ public:
 	~CWangDianNiu_DLL();
 	// TODO: add your methods here.
 
-	int Init(IEventCallBack* callback);
+	int Init(IEventCallBack* callback, CDataSourceTool* datatool);
 	int UnInit();
 	int startTask();
 	int stopTask();

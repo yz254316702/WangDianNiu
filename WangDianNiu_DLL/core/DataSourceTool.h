@@ -11,62 +11,76 @@
 #define YOUHUI_QUANQIUGOU "全球购"
 #define YOUHUI_BAOZHANG "消费者保障"
 
-class CDataSourceTool
+#ifdef WANGDIANNIU_DLL_EXPORTS
+#define ICALLBACK_API __declspec(dllexport)
+#else
+#define ICALLBACK_API __declspec(dllimport)
+#endif
+class ICALLBACK_API CDataSourceTool
 {
 public:
-	CDataSourceTool(void);
-	~CDataSourceTool(void);
-	std::string getSearchKeyStrng();
-	std::string PartOfTitle() const;
-	void PartOfTitle(std::string val);
-	int getviewTargetTime();
-	bool isViewSecTarget();
-	int sec_viewTargetTime();
-	std::string TargetTitle() const;
-	void TargetTitle(std::string val);
-
-	std::string m_searchString;
+	CDataSourceTool(void){
+	};
+	virtual ~CDataSourceTool(void){
+	};
 	std::string m_targetTitle;
-	std::string m_partOfTitle;
-
-	std::string m_sec_searchString;
-	std::string m_sec_targetTitle;
-	std::string m_sec_partOfTitle;
-
-	int m_viewTargetTime;
-	bool m_bViewSecTarget;
-	int m_sec_viewTargetTime;
+	std::string m_FuTargetTitle;
 	int m_viewPingLunTime;
-	std::string m_sortType;
-	int m_minPrice;
-	int m_maxPrice;
-	std::string m_strMinPrice;
-	std::string m_strMaxPrice;
-	std::string m_youhui;
-	std::string m_SendPlace;
+	std::string strMinPrice(){
+		char tmp[100] = {0};
+		sprintf(tmp,"%d",sEdit_target_price_min());
+		std::string stmp = tmp;
+		return stmp;
+	}
+	std::string strMaxPrice(){
+		char tmp[100] = {0};
+		sprintf(tmp,"%d",sEdit_target_price_max());
+		std::string stmp = tmp;
+		return stmp;
+	}
 
-	int ViewPingLunTime() const;
-	void ViewPingLunTime(int val);
-	std::string SendPlace() const;
-	void SendPlace(std::string val);
-	std::string SortType() const;
-	void SortType(std::string val);
-	int MinPrice() const;
-	void MinPrice(int val);
-	int MaxPrice() const;
-	void MaxPrice(int val);
-	std::string Youhui() const;
-	void Youhui(std::string val);
-	std::string strMaxPrice() const;
-	void strMaxPrice(std::string val);
-	std::string strMinPrice() const;
-	void strMinPrice(std::string val);
-	std::string Sec_partOfTitle() const;
-	void Sec_partOfTitle(std::string val);
-	std::string Sec_targetTitle() const;
-	void Sec_targetTitle(std::string val);
-	std::string Sec_searchString() const;
-	void Sec_searchString(std::string val);
+
+	virtual bool bprice_min_maxChecked()=0;
+	virtual bool bmian_yun_feiChecked()=0;
+	virtual bool btian_maoChecked()=0;
+	virtual bool bshouji_zhuanxiangChecked()=0;
+	virtual bool bjinbi_moneyChecked()=0;
+	virtual bool bhuo_dao_fu_kuanChecked()=0;
+	virtual bool bqitian_tui_huoChecked()=0;
+	virtual bool bcu_xiaoChecked()=0;
+	virtual bool bzhan_xian_baobeiChecked()=0;
+	virtual bool bchakan_chanpin_canshuChecked()=0;
+	virtual bool bview_shop_homepageChecked()=0;
+	virtual bool bview_baobei_pingjiaChecked()=0;
+	virtual bool bshoucang_baobeiChecked()=0;
+	virtual bool bzhi_tong_cheChecked()=0;
+	virtual bool btimer_for_publishChecked()=0;
+
+
+	virtual std::string	sCombo_search_sort()=0;
+	virtual std::string	sCombo_send_place()=0;
+	virtual int					iCombo_fu_baobei_count()=0;
+	virtual int					iCombo_target_compare_count()=0;
+
+	virtual std::string		sEdit_part_of_title()=0;
+	virtual std::string		sEdit_part_of_fu_biao_ti()=0;
+	virtual std::string		sEdit_search_key()=0;
+	virtual int		sEdit_target_price()=0;
+	virtual int		sEdit_target_price_min()=0;
+	virtual int		sEdit_target_price_max()=0;
+	virtual int		sEdit_max_search_time()=0;
+	virtual std::string		sEdit_baobei_url()=0;
+	virtual int		sEdit_view_main_baobei_time()=0;
+	virtual int		sEdit_view_fubaobei_time()=0;
+	virtual int		sEdit_view_other_shop_time()=0;
+	virtual int		sEdit_publish_timer_year()=0;
+	virtual int		sEdit_publish_timer_month()=0;
+	virtual int		sEdit_publish_timer_day()=0;
+	virtual int		sEdit_publish_timer_hour()=0;
+	virtual int		sEdit_publish_timer_minute()=0;
+	virtual int		sEdit_publish_time_split()=0;
+	virtual int		sEdit_publish_count()=0;
+
 
 };
 

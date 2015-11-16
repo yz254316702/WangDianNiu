@@ -95,7 +95,6 @@
   <ItemGroup>
     <ClCompile Include="core\Base64.cpp" />
     <ClCompile Include="core\CommandTool.cpp" />
-    <ClCompile Include="core\DataSourceTool.cpp" />
     <ClCompile Include="core\IEventCallBack.cpp" />
     <ClCompile Include="core\pubInclude.cpp" />
     <ClCompile Include="core\TaoBaoTask.cpp" />

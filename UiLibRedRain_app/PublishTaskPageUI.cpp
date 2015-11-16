@@ -151,11 +151,11 @@ void CPublishTaskPageUI::OnItemSelect_ComboSendPlace()
 }
 void CPublishTaskPageUI::OnItemSelect_ComboFuBaoBeiCount()
 {
-	m_iCombo_fu_baobei_count = m_pCombo_fu_baobei_count->GetCurSel()+1;
+	m_iCombo_fu_baobei_count = m_pCombo_fu_baobei_count->GetCurSel();
 }
 void CPublishTaskPageUI::OnItemSelect_ComboTargetCompareCount()
 {
-	m_iCombo_target_compare_count = m_pCombo_target_compare_count->GetCurSel()+1;
+	m_iCombo_target_compare_count = m_pCombo_target_compare_count->GetCurSel();
 }
 
 void CPublishTaskPageUI::OnBtnClick_ButtonUI_Check_found_or_not()

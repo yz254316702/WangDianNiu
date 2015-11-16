@@ -76,13 +76,14 @@ CWangDianNiu_DLL::~CWangDianNiu_DLL()
 	FreeConsoleWindow();
 }
 
-int CWangDianNiu_DLL::Init( IEventCallBack* callback )
+int CWangDianNiu_DLL::Init( IEventCallBack* callback ,CDataSourceTool* datatool)
 {
 	if (callback == NULL)
 	{
 		printLog("CWangDianNiu_DLL Init callback is null\n");
 	}
 	m_pCallBackObj = callback;
+	m_TaoTask->setDataTool(datatool);
 	m_TaoTask->setEventCallBack(m_pCallBackObj);
 	//chechDevice();
 	return 0;
