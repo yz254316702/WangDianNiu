@@ -1,5 +1,6 @@
 #pragma once
-
+#include "pubInclude.h"
+#include "xpath_static.h"
 #define SORT_BY_XINYONG "信用排序"
 #define SORT_BY_ZONGHE "综合排序"
 #define SORT_BY_JIAGE_UP "价格从低到高"
@@ -11,12 +12,7 @@
 #define YOUHUI_QUANQIUGOU "全球购"
 #define YOUHUI_BAOZHANG "消费者保障"
 
-#ifdef WANGDIANNIU_DLL_EXPORTS
-#define ICALLBACK_API __declspec(dllexport)
-#else
-#define ICALLBACK_API __declspec(dllimport)
-#endif
-class ICALLBACK_API CDataSourceTool
+class CDataSourceTool
 {
 public:
 	CDataSourceTool(void){
@@ -39,48 +35,269 @@ public:
 		return stmp;
 	}
 
+	bool fetchTaskData(){
 
-	virtual bool bprice_min_maxChecked()=0;
-	virtual bool bmian_yun_feiChecked()=0;
-	virtual bool btian_maoChecked()=0;
-	virtual bool bshouji_zhuanxiangChecked()=0;
-	virtual bool bjinbi_moneyChecked()=0;
-	virtual bool bhuo_dao_fu_kuanChecked()=0;
-	virtual bool bqitian_tui_huoChecked()=0;
-	virtual bool bcu_xiaoChecked()=0;
-	virtual bool bzhan_xian_baobeiChecked()=0;
-	virtual bool bchakan_chanpin_canshuChecked()=0;
-	virtual bool bview_shop_homepageChecked()=0;
-	virtual bool bview_baobei_pingjiaChecked()=0;
-	virtual bool bshoucang_baobeiChecked()=0;
-	virtual bool bzhi_tong_cheChecked()=0;
-	virtual bool btimer_for_publishChecked()=0;
+		TiXmlDocument * m_XDp_doc;
+		TiXmlElement * m_XEp_main;
+		m_XDp_doc = new TiXmlDocument();
+		if (m_XDp_doc == NULL)
+		{
+			printf("fetchTaskData --- new TiXmlDocument() null\n");
+			return false;
+		}
+		if (m_XDp_doc -> LoadFile("c:\\result.xml"))
+		{
+			m_XEp_main = m_XDp_doc->RootElement();
+		}
+		else
+		{
+			printf("fetchTaskData --- LoadFile failed\n");
+			delete m_XDp_doc;
+			m_XDp_doc = NULL;
+			return false;
+		}
+		m_bprice_min_maxChecked = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_bprice_min_maxChecked']/text()")=="true"?true:false;
+		m_bmian_yun_feiChecked = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_bmian_yun_feiChecked']/text()")=="true"?true:false;
+		m_btian_maoChecked = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_btian_maoChecked']/text()")=="true"?true:false;
+		m_bshouji_zhuanxiangChecked = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_bshouji_zhuanxiangChecked']/text()")=="true"?true:false;
+		m_bjinbi_moneyChecked = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_bjinbi_moneyChecked']/text()")=="true"?true:false;
+		m_bhuo_dao_fu_kuanChecked = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_bhuo_dao_fu_kuanChecked']/text()")=="true"?true:false;
+		m_bqitian_tui_huoChecked = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_bqitian_tui_huoChecked']/text()")=="true"?true:false;
+		m_bcu_xiaoChecked = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_bcu_xiaoChecked']/text()")=="true"?true:false;
+		m_bzhan_xian_baobeiChecked = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_bzhan_xian_baobeiChecked']/text()")=="true"?true:false;
+		m_bchakan_chanpin_canshuChecked = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_bchakan_chanpin_canshuChecked']/text()")=="true"?true:false;
+		m_bview_shop_homepageChecked = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_bview_shop_homepageChecked']/text()")=="true"?true:false;
+		m_bview_baobei_pingjiaChecked = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_bview_baobei_pingjiaChecked']/text()")=="true"?true:false;
+		m_bshoucang_baobeiChecked = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_bshoucang_baobeiChecked']/text()")=="true"?true:false;
+		m_bzhi_tong_cheChecked = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_bzhi_tong_cheChecked']/text()")=="true"?true:false;
+		m_btimer_for_publishChecked = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_btimer_for_publishChecked']/text()")=="true"?true:false;
+
+		m_sEdit_total_title = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_total_title']/text()").c_str();
+		m_sEdit_fu_biao_ti = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_fu_biao_ti']/text()").c_str();
+		m_sEdit_search_key = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_search_key']/text()").c_str();
 
 
-	virtual std::string	sCombo_search_sort()=0;
-	virtual std::string	sCombo_send_place()=0;
-	virtual int					iCombo_fu_baobei_count()=0;
-	virtual int					iCombo_target_compare_count()=0;
-
-	virtual std::string		sEdit_part_of_title()=0;
-	virtual std::string		sEdit_part_of_fu_biao_ti()=0;
-	virtual std::string		sEdit_search_key()=0;
-	virtual int		sEdit_target_price()=0;
-	virtual int		sEdit_target_price_min()=0;
-	virtual int		sEdit_target_price_max()=0;
-	virtual int		sEdit_max_search_time()=0;
-	virtual std::string		sEdit_baobei_url()=0;
-	virtual int		sEdit_view_main_baobei_time()=0;
-	virtual int		sEdit_view_fubaobei_time()=0;
-	virtual int		sEdit_view_other_shop_time()=0;
-	virtual int		sEdit_publish_timer_year()=0;
-	virtual int		sEdit_publish_timer_month()=0;
-	virtual int		sEdit_publish_timer_day()=0;
-	virtual int		sEdit_publish_timer_hour()=0;
-	virtual int		sEdit_publish_timer_minute()=0;
-	virtual int		sEdit_publish_time_split()=0;
-	virtual int		sEdit_publish_count()=0;
+		m_sCombo_search_sort = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sCombo_search_sort']/text()").c_str();
+		m_sCombo_send_place = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sCombo_send_place']/text()").c_str();
+		m_sEdit_total_title = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_total_title']/text()").c_str();
+		m_sEdit_fu_biao_ti = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_fu_biao_ti']/text()").c_str();
+		m_sEdit_baobei_url = TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_baobei_url']/text()").c_str();
 
 
+		m_iCombo_fu_baobei_count = atoi(TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_iCombo_fu_baobei_count']/text()").c_str()) ;
+		m_iCombo_target_compare_count = atoi(TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_iCombo_target_compare_count']/text()").c_str()) ;
+		m_sEdit_target_price = atoi(TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_target_price']/text()").c_str()) ;
+		m_sEdit_target_price_min = atoi(TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_target_price_min']/text()").c_str()) ;
+		m_sEdit_target_price_max = atoi(TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_target_price_max']/text()").c_str()) ;
+		m_sEdit_max_search_time = atoi(TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_max_search_time']/text()").c_str()) ;
+		m_sEdit_view_main_baobei_time = atoi(TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_view_main_baobei_time']/text()").c_str()) ;
+		m_sEdit_view_fubaobei_time = atoi(TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_view_fubaobei_time']/text()").c_str()) ;
+		m_sEdit_view_other_shop_time = atoi(TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_view_other_shop_time']/text()").c_str()) ;
+		m_sEdit_publish_timer_year = atoi(TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_publish_timer_year']/text()").c_str()) ;
+		m_sEdit_publish_timer_month = atoi(TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_publish_timer_month']/text()").c_str()) ;
+		m_sEdit_publish_timer_day = atoi(TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_publish_timer_day']/text()").c_str()) ;
+		m_sEdit_publish_timer_hour = atoi(TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_publish_timer_hour']/text()").c_str()) ;
+		m_sEdit_publish_timer_minute = atoi(TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_publish_timer_minute']/text()").c_str()) ;
+		m_sEdit_publish_time_split = atoi(TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_publish_time_split']/text()").c_str()) ;
+		m_sEdit_publish_count = atoi(TinyXPath::S_xpath_string(m_XEp_main,"//*[name()='m_sEdit_publish_count']/text()").c_str()) ;
+		printLog(("fetchTaskData --- 手机搜索列表中完整的宝贝标题:%s\n"),m_sEdit_total_title.c_str());
+		printLog(("fetchTaskData --- 副标题:%s\n"),m_sEdit_fu_biao_ti.c_str());
+		printLog(("fetchTaskData --- 搜索关键字:%s\n"),m_sEdit_search_key.c_str());
+		printLog(("fetchTaskData --- 商品价格:%d\n"),m_sEdit_target_price);
+		printLog(("fetchTaskData --- 排序类型:%s\n"),m_sCombo_search_sort.c_str());
+		printLog(("fetchTaskData --- 限价区间:%d\n"),m_bzhan_xian_baobeiChecked);
+		printLog(("fetchTaskData --- 限价区间 MIN:%d  MAX:%d\n"),m_sEdit_target_price_min,m_sEdit_target_price_max);
+		printLog("fetchTaskData --- 折扣和服务  免运费 %d\n",m_bmian_yun_feiChecked);
+		printLog("fetchTaskData --- 折扣和服务  天猫 %d\n",m_btian_maoChecked);
+		printLog("fetchTaskData --- 折扣和服务  手机专享 %d\n",m_bshouji_zhuanxiangChecked);
+		printLog("fetchTaskData --- 折扣和服务  淘金币抵钱 %d\n",m_bjinbi_moneyChecked);
+		printLog("fetchTaskData --- 折扣和服务  货到付款 %d\n",m_bhuo_dao_fu_kuanChecked);
+		printLog("fetchTaskData --- 折扣和服务  7+天退换货 %d\n",m_bqitian_tui_huoChecked);
+		printLog("fetchTaskData --- 折扣和服务  促销 %d\n",m_bcu_xiaoChecked);
+		printLog("fetchTaskData --- 发货地:%s\n",m_sCombo_send_place.c_str());
+		printLog(("fetchTaskData --- 搜索宝贝最大时间:%d\n"),m_sEdit_max_search_time);
+		printLog(("fetchTaskData --- 宝贝链接:%s\n"),m_sEdit_baobei_url.c_str());
+		printLog(("fetchTaskData --- 浏览主宝贝的时间:%d\n"),m_sEdit_view_main_baobei_time);
+		printLog("fetchTaskData --- 浏览副宝贝的数量 %d\n",m_iCombo_fu_baobei_count);
+		printLog("fetchTaskData --- 货比%d家再进店\n",m_iCombo_target_compare_count);
+		printLog(("fetchTaskData --- 浏览副宝贝的时间:%d\n"),m_sEdit_view_fubaobei_time);
+		printLog(("fetchTaskData --- 其他店铺浏览时间:%d\n"),m_sEdit_view_other_shop_time);
+		printLog("fetchTaskData --- 需要执行的操作  展现宝贝  %d\n",m_bzhan_xian_baobeiChecked);
+		printLog("fetchTaskData --- 需要执行的操作  查看产品参数  %d\n",m_bchakan_chanpin_canshuChecked);
+		printLog("fetchTaskData --- 需要执行的操作  浏览店铺首页  %d\n",m_bview_shop_homepageChecked);
+		printLog("fetchTaskData --- 需要执行的操作  浏览宝贝评价  %d\n",m_bview_baobei_pingjiaChecked);
+		printLog("fetchTaskData --- 需要执行的操作  收藏宝贝  %d\n",m_bshoucang_baobeiChecked);
+		printLog("fetchTaskData --- 需要执行的操作  直通车  %d\n",m_bzhi_tong_cheChecked);
+		printLog(("fetchTaskData --- 定时发布任务 %d年%d月%d日%d时%d分\n"),m_sEdit_publish_timer_year
+			,m_sEdit_publish_timer_month
+			,m_sEdit_publish_timer_day
+			,m_sEdit_publish_timer_hour
+			,m_sEdit_publish_timer_minute);
+		printLog(("fetchTaskData --- 流量时间间隔:%d\n"),m_sEdit_publish_time_split);
+		printLog(("fetchTaskData --- 任务数量:%d\n"),m_sEdit_publish_count);
+
+
+		delete m_XDp_doc;
+		m_XDp_doc = NULL;
+		return true;
+	};
+
+	bool bprice_min_maxChecked(){
+		return m_bprice_min_maxChecked;
+	};
+	bool bmian_yun_feiChecked(){
+		return m_bmian_yun_feiChecked;
+	};
+	bool btian_maoChecked(){
+		return m_btian_maoChecked;
+	};
+	bool bshouji_zhuanxiangChecked(){
+		return m_bshouji_zhuanxiangChecked;
+	};
+	bool bjinbi_moneyChecked(){
+		return m_bjinbi_moneyChecked;
+	};
+	bool bhuo_dao_fu_kuanChecked(){
+		return m_bhuo_dao_fu_kuanChecked;
+	};
+	bool bqitian_tui_huoChecked(){
+		return m_bqitian_tui_huoChecked;
+	};
+	bool bcu_xiaoChecked(){
+		return m_bcu_xiaoChecked;
+	};
+	bool bzhan_xian_baobeiChecked(){
+		return m_bzhan_xian_baobeiChecked;
+	};
+	bool bchakan_chanpin_canshuChecked(){
+		return m_bchakan_chanpin_canshuChecked;
+	};
+	bool bview_shop_homepageChecked(){
+		return m_bview_shop_homepageChecked;
+	};
+	bool bview_baobei_pingjiaChecked(){
+		return m_bview_baobei_pingjiaChecked;
+	};
+	bool bshoucang_baobeiChecked(){
+		return m_bshoucang_baobeiChecked;
+	};
+	bool bzhi_tong_cheChecked(){
+		return m_bzhi_tong_cheChecked;
+	};
+	bool btimer_for_publishChecked(){
+		return m_btimer_for_publishChecked;
+	};
+
+
+	std::string	sCombo_search_sort(){
+		return m_sCombo_search_sort;
+	};
+	std::string	sCombo_send_place(){
+		return m_sCombo_send_place;
+	};
+	int					iCombo_fu_baobei_count(){
+		return m_iCombo_fu_baobei_count;
+	};
+	int					iCombo_target_compare_count(){
+		return m_iCombo_target_compare_count;
+	};
+
+	std::string		sEdit_part_of_title(){
+		return m_sEdit_total_title;
+	};
+	std::string		sEdit_part_of_fu_biao_ti(){
+		return m_sEdit_fu_biao_ti;
+	};
+	std::string		sEdit_search_key(){
+		return m_sEdit_search_key;
+	};
+	int		sEdit_target_price(){
+		return m_sEdit_target_price;
+	};
+	int		sEdit_target_price_min(){
+		return m_sEdit_target_price_min;
+	};
+	int		sEdit_target_price_max(){
+		return m_sEdit_target_price_max;
+	};
+	int		sEdit_max_search_time(){
+		return m_sEdit_max_search_time;
+	};
+	std::string		sEdit_baobei_url(){
+		return m_sEdit_baobei_url;
+	};
+	int		sEdit_view_main_baobei_time(){
+		return m_sEdit_view_main_baobei_time;
+	};
+	int		sEdit_view_fubaobei_time(){
+		return m_sEdit_view_fubaobei_time;
+	};
+	int		sEdit_view_other_shop_time(){
+		return m_sEdit_view_other_shop_time;
+	};
+	int		sEdit_publish_timer_year(){
+		return m_sEdit_publish_timer_year;
+	};
+	int		sEdit_publish_timer_month(){
+		return m_sEdit_publish_timer_month;
+	};
+	int		sEdit_publish_timer_day(){
+		return m_sEdit_publish_timer_day;
+	};
+	int		sEdit_publish_timer_hour(){
+		return m_sEdit_publish_timer_hour;
+	};
+	int		sEdit_publish_timer_minute(){
+		return m_sEdit_publish_timer_minute;
+	};
+	int		sEdit_publish_time_split(){
+		return m_sEdit_publish_time_split;
+	};
+	int		sEdit_publish_count(){
+		return m_sEdit_publish_count;
+	};
+
+
+private:
+	bool m_bprice_min_maxChecked;
+	bool m_bmian_yun_feiChecked;
+	bool m_btian_maoChecked;
+	bool m_bshouji_zhuanxiangChecked;
+	bool m_bjinbi_moneyChecked;
+	bool m_bhuo_dao_fu_kuanChecked;
+	bool m_bqitian_tui_huoChecked;
+	bool m_bcu_xiaoChecked;
+	bool m_bzhan_xian_baobeiChecked;
+	bool m_bchakan_chanpin_canshuChecked;
+	bool m_bview_shop_homepageChecked;
+	bool m_bview_baobei_pingjiaChecked;
+	bool m_bshoucang_baobeiChecked;
+	bool m_bzhi_tong_cheChecked;
+	bool m_btimer_for_publishChecked;
+
+
+	std::string 	m_sCombo_search_sort;
+	std::string		m_sCombo_send_place;
+	int					m_iCombo_fu_baobei_count;
+	int					m_iCombo_target_compare_count;
+
+	std::string		m_sEdit_total_title;
+	std::string		m_sEdit_fu_biao_ti ;
+	std::string		m_sEdit_search_key ;
+	int		m_sEdit_target_price;
+	int		m_sEdit_target_price_min;
+	int		m_sEdit_target_price_max;
+	int		m_sEdit_max_search_time;
+	std::string		m_sEdit_baobei_url;
+	int		m_sEdit_view_main_baobei_time;
+	int		m_sEdit_view_fubaobei_time;
+	int		m_sEdit_view_other_shop_time;
+	int		m_sEdit_publish_timer_year;
+	int		m_sEdit_publish_timer_month;
+	int		m_sEdit_publish_timer_day;
+	int		m_sEdit_publish_timer_hour;
+	int		m_sEdit_publish_timer_minute;
+	int		m_sEdit_publish_time_split;
+	int		m_sEdit_publish_count;
 };
 

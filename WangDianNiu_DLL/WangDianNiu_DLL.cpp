@@ -76,14 +76,13 @@ CWangDianNiu_DLL::~CWangDianNiu_DLL()
 	FreeConsoleWindow();
 }
 
-int CWangDianNiu_DLL::Init( IEventCallBack* callback ,CDataSourceTool* datatool)
+int CWangDianNiu_DLL::Init( IEventCallBack* callback)
 {
 	if (callback == NULL)
 	{
 		printLog("CWangDianNiu_DLL Init callback is null\n");
 	}
 	m_pCallBackObj = callback;
-	m_TaoTask->setDataTool(datatool);
 	m_TaoTask->setEventCallBack(m_pCallBackObj);
 	//chechDevice();
 	return 0;
@@ -164,4 +163,33 @@ bool CWangDianNiu_DLL::isInitOK()
 bool CWangDianNiu_DLL::isTaskStarted()
 {
 	return m_TaoTask->m_bStarted;
+}
+
+ void  CWangDianNiu_DLL::UnicodetoUTF8(const wchar_t* in, unsigned int len, std::string& out)
+ {
+	 Unicode_to_UTF8(in, len, out);
+ }
+
+ void  CWangDianNiu_DLL::UTF8toUnicode(const char* in, unsigned int len, std::wstring& out)
+ {
+	 UTF8_to_Unicode(in, len, out);
+ }
+
+ void  CWangDianNiu_DLL::UnicodetoANSI(const wchar_t* in, unsigned int len, std::string& out)
+ {
+	 Unicode_to_ANSI(in, len, out);
+ }
+
+ void  CWangDianNiu_DLL::ANSItoUnicode(const char* in, unsigned int len, std::wstring& out)
+ {
+	 ANSI_to_Unicode(in, len, out);
+ }
+
+std::string  CWangDianNiu_DLL::base64encode(unsigned char const* in, unsigned int len)
+{
+	return base64_encode(in,len);
+}
+std::string  CWangDianNiu_DLL::base64decode(unsigned char const* in,unsigned int len)
+{
+	return base64_decode(in,len);
 }

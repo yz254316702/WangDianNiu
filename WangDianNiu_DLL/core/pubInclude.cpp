@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "pubInclude.h"
+
+
 void Unicode_to_UTF8(const wchar_t* in, unsigned int len, std::string& out)
 {   
 	size_t out_len = len * 3 + 1;

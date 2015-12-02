@@ -173,6 +173,7 @@ void __cdecl taoBaoTask( LPVOID param )
 				task->m_callBack->taskStatusCallBack("正在启动淘宝应用");
 			}
 			task->m_CmdTool->clearPackageData((TAOBAO_PCK_NAME));
+			dataTool->fetchTaskData();
 			task->m_CmdTool->startApp((TAOBAO_PCK_NAME),(TAOBAO_PCK_WELCOME_NAME));
 			task->setTaskStatus(TASK_STATUS_REFRESHVIEW);
 			backStatus = TASK_STATUS_STARTING;
@@ -599,7 +600,7 @@ CTaoBaoTask::CTaoBaoTask(void)
 	m_bStopManually = false;
 	threadHandle = 0;
 	m_callBack = NULL;
-	//m_dataTool = new CDataSourceTool();
+	m_dataTool = new CDataSourceTool();
 }
 
 CTaoBaoTask::CTaoBaoTask( std::string xmlPath ,CommandTool *tool)
@@ -613,7 +614,7 @@ CTaoBaoTask::CTaoBaoTask( std::string xmlPath ,CommandTool *tool)
 	m_bStopManually = false;
 	threadHandle = 0;
 	m_callBack = NULL;
-	//m_dataTool = new CDataSourceTool();
+	m_dataTool = new CDataSourceTool();
 	setCmdTool(tool);
 }
 

@@ -1,5 +1,6 @@
 #pragma once
 #define PUBLISH_TASK_PAGE "PublishTaskPage"
+
 class CPublishTaskPageUI: public CContainerUI
 {
 public:
@@ -14,6 +15,8 @@ private:
 	CPaintManagerUI *m_pPaintManager;
 
 	CDialogBuilder m_builder;
+private:
+	void saveParams();
 
 public:
 	DuiLib::CWkeWebkitUI *m_pWkeWebkit;
