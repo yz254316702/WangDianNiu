@@ -374,18 +374,26 @@ void CPublishTaskPageUI::saveParams()
 
 	TiXmlElement * element;
 	TiXmlText * text;
-	
+	std::string textChar , base64Char;
+
+
 	element = new TiXmlElement("m_bprice_min_maxChecked");  
+	textChar = m_bprice_min_maxChecked?"true":"false";
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_bprice_min_maxChecked?"true":"false");  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);  
 
 	element = new TiXmlElement("m_bmian_yun_feiChecked");  
+	textChar = m_bmian_yun_feiChecked?"true":"false";
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_bmian_yun_feiChecked?"true":"false");  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_btian_maoChecked");  
+	textChar = m_btian_maoChecked?"true":"false";
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_btian_maoChecked?"true":"false");  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
@@ -393,91 +401,127 @@ void CPublishTaskPageUI::saveParams()
 
 
 	element = new TiXmlElement("m_bshouji_zhuanxiangChecked");  
+	textChar = m_bshouji_zhuanxiangChecked?"true":"false";
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_bshouji_zhuanxiangChecked?"true":"false");  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_bjinbi_moneyChecked");  
+	textChar = m_bjinbi_moneyChecked?"true":"false";
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_bjinbi_moneyChecked?"true":"false");  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_bhuo_dao_fu_kuanChecked");  
+	textChar = m_bhuo_dao_fu_kuanChecked?"true":"false";
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_bhuo_dao_fu_kuanChecked?"true":"false");  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_bqitian_tui_huoChecked");  
+	textChar = m_bqitian_tui_huoChecked?"true":"false";
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_bqitian_tui_huoChecked?"true":"false");  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_bcu_xiaoChecked");  
+	textChar = m_bcu_xiaoChecked?"true":"false";
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_bcu_xiaoChecked?"true":"false");  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_bzhan_xian_baobeiChecked");  
+	textChar = m_bzhan_xian_baobeiChecked?"true":"false";
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_bzhan_xian_baobeiChecked?"true":"false");  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_bchakan_chanpin_canshuChecked");  
+	textChar = m_bchakan_chanpin_canshuChecked?"true":"false";
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_bchakan_chanpin_canshuChecked?"true":"false");  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_bview_shop_homepageChecked");  
+	textChar = m_bview_shop_homepageChecked?"true":"false";
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_bview_shop_homepageChecked?"true":"false");  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_bview_baobei_pingjiaChecked");  
+	textChar = m_bview_baobei_pingjiaChecked?"true":"false";
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_bview_baobei_pingjiaChecked?"true":"false");  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_bshoucang_baobeiChecked");  
+	textChar = m_bshoucang_baobeiChecked?"true":"false";
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_bshoucang_baobeiChecked?"true":"false");  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_bzhi_tong_cheChecked");  
+	textChar = m_bzhi_tong_cheChecked?"true":"false";
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_bzhi_tong_cheChecked?"true":"false");  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_btimer_for_publishChecked");  
+	textChar = m_btimer_for_publishChecked?"true":"false";
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_btimer_for_publishChecked?"true":"false");  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sCombo_search_sort");  
+	textChar = m_sCombo_search_sort.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sCombo_search_sort.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sCombo_send_place");  
+	textChar = m_sCombo_send_place.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sCombo_send_place.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sEdit_total_title");  
+	textChar = m_sEdit_total_title.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sEdit_total_title.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sEdit_fu_biao_ti");  
+	textChar = m_sEdit_fu_biao_ti.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sEdit_fu_biao_ti.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sEdit_search_key");  
+	textChar = m_sEdit_search_key.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sEdit_search_key.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sEdit_baobei_url");  
+	textChar = m_sEdit_baobei_url.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sEdit_baobei_url.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
@@ -486,6 +530,8 @@ void CPublishTaskPageUI::saveParams()
 	memset(tmp,0,1000);
 	sprintf(tmp,"%d",m_iCombo_fu_baobei_count);
 	element = new TiXmlElement("m_iCombo_fu_baobei_count");  
+	textChar = tmp;
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(tmp);  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
@@ -493,76 +539,106 @@ void CPublishTaskPageUI::saveParams()
 	memset(tmp,0,1000);
 	sprintf(tmp,"%d",m_iCombo_target_compare_count);
 	element = new TiXmlElement("m_iCombo_target_compare_count");  
+	textChar = tmp;
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(tmp);  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sEdit_target_price");  
+	textChar = m_sEdit_target_price.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sEdit_target_price.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sEdit_target_price_min");  
+	textChar = m_sEdit_target_price_min.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sEdit_target_price_min.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sEdit_target_price_max");  
+	textChar = m_sEdit_target_price_max.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sEdit_target_price_max.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sEdit_max_search_time");  
+	textChar = m_sEdit_max_search_time.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sEdit_max_search_time.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sEdit_view_main_baobei_time");  
+	textChar = m_sEdit_view_main_baobei_time.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sEdit_view_main_baobei_time.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sEdit_view_fubaobei_time");  
+	textChar = m_sEdit_view_fubaobei_time.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sEdit_view_fubaobei_time.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sEdit_view_other_shop_time");  
+	textChar = m_sEdit_view_other_shop_time.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sEdit_view_other_shop_time.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sEdit_publish_timer_year");  
+	textChar = m_sEdit_publish_timer_year.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sEdit_publish_timer_year.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sEdit_publish_timer_month");  
+	textChar = m_sEdit_publish_timer_month.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sEdit_publish_timer_month.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sEdit_publish_timer_day");  
+	textChar = m_sEdit_publish_timer_day.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sEdit_publish_timer_day.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sEdit_publish_timer_hour");  
+	textChar = m_sEdit_publish_timer_hour.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sEdit_publish_timer_hour.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sEdit_publish_timer_minute");  
+	textChar = m_sEdit_publish_timer_minute.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sEdit_publish_timer_minute.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sEdit_publish_time_split");  
+	textChar = m_sEdit_publish_time_split.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sEdit_publish_time_split.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
 
 	element = new TiXmlElement("m_sEdit_publish_count");  
+	textChar = m_sEdit_publish_count.GetStringA().c_str();
+	base64Char = CWangDianNiu_DLL::base64encode((const unsigned char*)textChar.c_str(),textChar.length());
 	text = new TiXmlText(m_sEdit_publish_count.GetStringA().c_str());  
 	element->LinkEndChild(text);  
 	elementParams->LinkEndChild(element);
@@ -570,16 +646,13 @@ void CPublishTaskPageUI::saveParams()
 	TiXmlPrinter printer;
 	xmlDocs->Accept(&printer);
 	std::string xmlStr = printer.CStr();
-	std::wstring unicode;
-	std::string utf8;
-	CWangDianNiu_DLL::base64_encode((const unsigned char*)"sdasdsadsadff",(unsigned int)strlen("sdasdsadsadff"));
 
 	//ANSI_to_Unicode(xmlStr.c_str(),xmlStr.length(),unicode);
 	//Unicode_to_UTF8(unicode.c_str(),unicode.length(),utf8);
 
 	char filename[] = "c:\\result.xml"; 
 	ofstream fout(filename);
-	fout<<utf8.c_str()<<endl;
+	fout<<xmlStr.c_str()<<endl;
 	fout.close();
 	//xmlDocs->SaveFile("c:\\result.xml");  
 
