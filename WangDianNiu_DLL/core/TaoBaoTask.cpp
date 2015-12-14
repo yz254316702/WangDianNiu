@@ -67,8 +67,8 @@ std::string getTaskStatusString(int status)
 	case TASK_STATUS_CLICK_SEND_PLACE:
 		tmp=("TASK_STATUS_CLICK_SEND_PLACE");
 		break;
-	case TASK_STATUS_SCROLL_IN_SEND_PLACE:
-		tmp=("TASK_STATUS_SCROLL_IN_SEND_PLACE");
+	case TASK_STATUS_SCROLL_IN_FILTER:
+		tmp=("TASK_STATUS_SCROLL_IN_FILTER");
 		break;
 	case TASK_STATUS_CONFIRM_SEARCH_FILTER:
 		tmp=("TASK_STATUS_CONFIRM_SEARCH_FILTER");
@@ -252,19 +252,82 @@ void __cdecl taoBaoTask( LPVOID param )
 			}
 			else if (backStatus == TASK_STATUS_SHAIXUAN_IN_SEARCH_RESULT)
 			{
-				if (task->checkElementById(("com.taobao.taobao:id/min_price"),task->m_XEp_main))
+				if (dataTool->bprice_min_maxChecked() && !task->m_bMinMaxSetted && task->checkElementById(("com.taobao.taobao:id/min_price"),task->m_XEp_main))
 				{
+					task->m_bMinMaxSetted = true;
 					task->setTaskStatus(TASK_STATUS_CHANGE_MIN_MAX_PRICE);
 					if (task->m_callBack)
 					{
 						task->m_callBack->taskStatusCallBack("正在设置价格范围");
 					}
 				}
+				else
+				{
+					if (!task->m_bLowPriceSetted && task->checkElementById("com.taobao.taobao:id/service_expand_btn",task->m_XEp_main))
+					{
+						task->m_bLowPriceSetted = true;
+						task->setTaskStatus(TASK_STATUS_EXPAND_LOWPRICE_SERVICE);
+						if (task->m_callBack)
+						{
+							task->m_callBack->taskStatusCallBack("正在设置折扣和服务");
+						}
+					}
+					else
+					{
+						if (!task->m_bSendPlaceSetted && task->getTextById(("com.taobao.taobao:id/user_location"),task->m_XEp_main) != dataTool->sCombo_send_place())
+						{
+							task->m_bSendPlaceSetted = true;
+							task->setTaskStatus(TASK_STATUS_CHANGE_SEND_PLACE);
+							if (task->m_callBack)
+							{
+								task->m_callBack->taskStatusCallBack("正在设置区域");
+							}
+						}
+						else
+						{
+							task->setTaskStatus(TASK_STATUS_CONFIRM_SEARCH_FILTER);
+						}
+					}
+				}
 			}
 			else if (backStatus == TASK_STATUS_CHANGE_MIN_MAX_PRICE)
 			{
-				if (task->getTextById(("com.taobao.taobao:id/user_location"),task->m_XEp_main) != dataTool->sCombo_send_place())
+				if (!task->m_bLowPriceSetted && task->checkElementById("com.taobao.taobao:id/service_expand_btn",task->m_XEp_main))
 				{
+					task->m_bLowPriceSetted = true;
+					task->setTaskStatus(TASK_STATUS_EXPAND_LOWPRICE_SERVICE);
+					if (task->m_callBack)
+					{
+						task->m_callBack->taskStatusCallBack("正在设置折扣和服务");
+					}
+				}
+				else
+				{
+					if (!task->m_bSendPlaceSetted && task->getTextById(("com.taobao.taobao:id/user_location"),task->m_XEp_main) != dataTool->sCombo_send_place())
+					{
+						task->m_bSendPlaceSetted = true;
+						task->setTaskStatus(TASK_STATUS_CHANGE_SEND_PLACE);
+						if (task->m_callBack)
+						{
+							task->m_callBack->taskStatusCallBack("正在设置区域");
+						}
+					}
+					else
+					{
+						task->setTaskStatus(TASK_STATUS_CONFIRM_SEARCH_FILTER);
+					}
+				}
+
+			}
+			else if (backStatus == TASK_STATUS_EXPAND_LOWPRICE_SERVICE)
+			{
+				task->setTaskStatus(TASK_STATUS_SELECT_LOWPRICE_SERVICE);
+			}
+			else if (backStatus == TASK_STATUS_SELECT_LOWPRICE_SERVICE)
+			{
+				if (!task->m_bSendPlaceSetted && task->getTextById(("com.taobao.taobao:id/user_location"),task->m_XEp_main) != dataTool->sCombo_send_place())
+				{
+					task->m_bSendPlaceSetted = true;
 					task->setTaskStatus(TASK_STATUS_CHANGE_SEND_PLACE);
 					if (task->m_callBack)
 					{
@@ -277,7 +340,7 @@ void __cdecl taoBaoTask( LPVOID param )
 				}
 			}
 			else if (backStatus == TASK_STATUS_CHANGE_SEND_PLACE ||
-				     backStatus == TASK_STATUS_SCROLL_IN_SEND_PLACE)
+				     backStatus == TASK_STATUS_SCROLL_IN_FILTER)
 			{
 				if (task->checkElementByText(dataTool->sCombo_send_place(),task->m_XEp_main))
 				{
@@ -289,12 +352,12 @@ void __cdecl taoBaoTask( LPVOID param )
 					}
 					else
 					{
-						task->setTaskStatus(TASK_STATUS_SCROLL_IN_SEND_PLACE);
+						task->setTaskStatus(TASK_STATUS_SCROLL_IN_FILTER);
 					}
 				}
 				else
 				{
-					task->setTaskStatus(TASK_STATUS_SCROLL_IN_SEND_PLACE);
+					task->setTaskStatus(TASK_STATUS_SCROLL_IN_FILTER);
 				}
 			}
 			else if (backStatus == TASK_STATUS_CLICK_SEND_PLACE)
@@ -516,14 +579,48 @@ void __cdecl taoBaoTask( LPVOID param )
 			backStatus = TASK_STATUS_CHANGE_MIN_MAX_PRICE;
 			task->setTaskStatus(TASK_STATUS_REFRESHVIEW);
 			break;
+		case TASK_STATUS_EXPAND_LOWPRICE_SERVICE:
+			task->click(("com.taobao.taobao:id/service_expand_btn"),task->m_XEp_main);
+
+			backStatus = TASK_STATUS_EXPAND_LOWPRICE_SERVICE;
+			task->setTaskStatus(TASK_STATUS_REFRESHVIEW);
+			break;
+		case TASK_STATUS_SELECT_LOWPRICE_SERVICE:
+			if (dataTool->bmian_yun_feiChecked())
+			{
+				task->clickByText("免运费",task->m_XEp_main);
+			}
+			if (dataTool->btian_maoChecked())
+			{
+				task->clickByText("天猫",task->m_XEp_main);
+			}
+			if (dataTool->bshouji_zhuanxiangChecked())
+			{
+				task->clickByText("手机专享",task->m_XEp_main);
+			}
+			if (dataTool->bjinbi_moneyChecked())
+			{
+				task->clickByText("淘金币抵钱",task->m_XEp_main);
+			}
+			if (dataTool->bhuo_dao_fu_kuanChecked())
+			{
+				task->clickByText("货到付款",task->m_XEp_main);
+			}
+			if (dataTool->bqitian_tui_huoChecked())
+			{
+				task->clickByText("7+天退货",task->m_XEp_main);
+			}
+			backStatus = TASK_STATUS_SELECT_LOWPRICE_SERVICE;
+			task->setTaskStatus(TASK_STATUS_REFRESHVIEW);
+			break;
 		case TASK_STATUS_CHANGE_SEND_PLACE:
 			task->click(("com.taobao.taobao:id/location_expand_btn"),task->m_XEp_main);
 			backStatus = TASK_STATUS_CHANGE_SEND_PLACE;
 			task->setTaskStatus(TASK_STATUS_REFRESHVIEW);
 			break;
-		case TASK_STATUS_SCROLL_IN_SEND_PLACE:
+		case TASK_STATUS_SCROLL_IN_FILTER:
 			task->m_CmdTool->swipe(350,500,300,250);
-			backStatus = TASK_STATUS_SCROLL_IN_SEND_PLACE;
+			backStatus = TASK_STATUS_SCROLL_IN_FILTER;
 			task->setTaskStatus(TASK_STATUS_REFRESHVIEW);
 			break;
 		case TASK_STATUS_CLICK_SEND_PLACE:
@@ -600,6 +697,9 @@ CTaoBaoTask::CTaoBaoTask(void)
 	m_bStopManually = false;
 	threadHandle = 0;
 	m_callBack = NULL;
+	m_bLowPriceSetted = false;
+	m_bMinMaxSetted = false;
+	m_bSendPlaceSetted = false;
 	m_dataTool = new CDataSourceTool();
 }
 
@@ -614,6 +714,9 @@ CTaoBaoTask::CTaoBaoTask( std::string xmlPath ,CommandTool *tool)
 	m_bStopManually = false;
 	threadHandle = 0;
 	m_callBack = NULL;
+	m_bLowPriceSetted = false;
+	m_bMinMaxSetted = false;
+	m_bSendPlaceSetted = false;
 	m_dataTool = new CDataSourceTool();
 	setCmdTool(tool);
 }
